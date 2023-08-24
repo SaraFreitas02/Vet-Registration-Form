@@ -1,0 +1,221 @@
+/*header*/
+ .header{/*placement: vet name + dropdown button*/
+   display:flex;
+   justify-content: space-between;
+   align-items: center;
+  }
+
+  #vet-name{/*customization: vet name*/
+   text-decoration: none;
+   color: black;
+  }
+
+  /*dropdown-menu button*/
+   #dropdown-button { /*customization: dropdown-menu button*/
+     background-color: transparent;
+     border-radius: 20%;
+     color: black;
+     padding: 16px;
+     font-size: 16px;
+     border: none;
+    }
+  
+    .dropdown { /*placement: preparation -> dropdown function*/
+      position: relative;
+      display: inline-block;
+    }
+  
+    .dropdown-content { /*placement + customization: dropdown content*/
+      display: none;
+      position: absolute;
+      right: 0;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius:20px;
+    }
+  
+    .dropdown-content a { /*customization: navigation links*/
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+  
+  /* header buttons */
+   .header-links{ /*placement + customization: header links container*/
+     display: flex;
+     justify-content: space-between;
+     background-color: lightgray;
+     border-radius: 20px;
+    }
+
+    .header-links a{ /*customization: header links*/
+     color: black;
+     text-decoration: none;
+     width: 25%;
+     text-align: center;
+     font-size: 16px;
+    }
+    
+
+/*main*/
+ /*Custumization*/
+  form{ /*customization: form field*/
+   width: 550px;
+   margin-top: 30px;
+  }
+  
+  fieldset{ /*customization: fieldsets*/
+    border-radius: 20px;
+  }
+
+  legend{ /*customization: legends*/
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  form button{ /*customization: form buttons*/
+    border-radius: 20px;
+  }
+  
+  input{ /*customization:inputs*/
+    color: blue;
+  }
+
+ /*Form Flexbox*/
+  .container1-form{ /*container: row space-around*/
+   display: flex;
+   justify-content: space-around;
+  }
+
+  .container2-form{ /*container: column flex-start*/
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   }
+
+  
+/*footer*/
+ footer { /*placement + customization: footer*/
+   position:absolute;
+   background-color: lightgray;
+   bottom: 0%;
+   width: 100%;
+   max-height: fit-content;
+  }
+
+ footer a { /*customization: footer links*/
+   color: black;
+   text-decoration: none;
+   width: 100%;
+   border-radius: 20px;
+   font-size: 15px;
+  }
+
+ footer p { /*customization: footer paragraphs*/
+   font-weight: bold;
+   font-size: 17px;
+  }
+ 
+ .container-icons-footer a{ /*customization: footer icons*/
+   font-size: 25px;
+   margin: 5px;
+  }
+
+  /*Footer Flexbox*/
+   .container2-footer{ /*container: column just.content->space-around*/
+    display: flex;
+    justify-content: space-around;
+   }
+
+   .container-links-footer{ /*container: column*/
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 33%;
+   }
+
+   .container-icons-footer{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+   }
+  
+
+/*hover*/
+ .header-links a:hover{ /*hover customization: header links*/
+  color: white;
+  background-color: black;
+  border-radius: 20px;
+ }
+
+ .dropdown-content a:hover { /* hover customization: navigation links*/
+  background-color: gray;
+  border-radius: 20px;
+  color: white;
+ }
+
+ .dropdown:hover .dropdown-content { /*hover customization: dropdown function activation*/
+  display: block;
+  cursor: pointer;
+ }
+
+ .dropdown:hover #dropdown-button { /*hover customization: dropdown*/
+ color: gray;
+ scale: 1.2;
+ cursor: pointer;
+ }
+
+ input[type="radio"]:hover { /*hover customization: radio buttons*/
+  cursor: pointer;
+ }
+
+ input[type="date"]:hover { /*hover customization: date inputs*/
+  cursor: text;
+ }
+
+ select:hover { /*hover customization: select*/
+  cursor: pointer;
+ }
+
+ .container-links-footer a:hover{ /*hover customization: footer links*/
+  color: white;
+  background-color: black;
+ }
+
+ .icon-footer:hover{/*hover customization: footer icons*/
+  font-weight: bold;
+ }
+
+/*adjustments*/
+ /*specific*/
+  #number{ /*adjustments: house number input*/
+   width: 10%;
+  }
+
+  #zip-code{ /*adjustments: zipcode input*/
+   width: 35%;
+  }
+
+  #phone-number{ /*adjustments: phone number input*/
+   width: 30%;
+  }
+
+  #checkboxes{ /*adjustments: radio buttons*/
+   width: 20%;
+  }
+
+ /*non-specific*/ 
+  .align-items{ /*set: align items center*/
+    align-items: center;
+  }
+
+  .flex-basis{ /*set: flex basis half*/
+   flex-basis:50%;
+  }
+  
+  .flex-grow{ /*set: flex grow 1*/
+    flex-grow: 1;
+  }

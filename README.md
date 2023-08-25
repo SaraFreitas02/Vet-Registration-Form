@@ -4,7 +4,7 @@
 
 The Vet Registration Form is a web-based application designed to collect registration information from veterinary clinic clients. This project aims to streamline the registration process, making it convenient for both clients and clinic staff.
 
-**Note:** This project is a **work in progress** and is continually being developed.
+**Note:** This project is a **work in progress** and is continually being developed. It is also important to note that, since the project is currently in its early stages, significant transformations are anticipated. The final result may bear little resemblance to its current state, as it undergoes continuous development and refinement.
 
 ## Project Structure
 

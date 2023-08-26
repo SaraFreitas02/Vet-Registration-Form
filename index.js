@@ -1,123 +1,179 @@
-// Pet Info
-//Handling of other type of pet selection (create "Which one?" input)
-// Variables 
-const petSelector = document.getElementById("pet-list"); //select the selector
-const otherPet = document.createElement("input"); //define the element to be created
-const jsOther = document.getElementById("js-other"); //select the parent (to append later)
+// *PET INFO*
 
-//Error Handling
-if (!petSelector || !jsOther) {
-  // Handle the case of missing elements
-  console.error("Required elements not found.");
-} else {
-  // Handle the case of elements existing
-  otherPet.setAttribute('type', "text");
-  otherPet.setAttribute('placeholder', "Which one?");
-}
+  //FUNCTION FOR ADD PET BUTTONS
+    //*Variables
+     const createAddPet = document.getElementById("create-add-pet"); //select the elements to be cloned
+     const addPetBtn = document.getElementById("add-pet"); //select the 'add pet' button 
+     const parentAddPet = document.getElementById("parent-add-pet"); //select the parent
 
-//Activation of function to create the "Which one?" input
-petSelector.addEventListener('change', function other() {
-  if (petSelector.value === "otr") { //check the values
-    jsOther.appendChild(otherPet);
-  } //create the "Which one?" input
-  else {
-    jsOther.removeChild(otherPet);
-  } //delete the "Which one?" input
-});
+    //*Function to clone elements
+     function createFormExpansion() {
+       return createAddPet.cloneNode(true);
+     }
+
+    //*Error handling 
+     if (!createAddPet || !addPetBtn || !parentAddPet) {
+      //Handle the case of missing elements
+       console.error("Required elements not found.");
+     }
+
+    //*Function to add registration for one more pet
+     function createMorePets() {
+      const formExpansion = createFormExpansion(); //create a new formExpansion element
+      parentAddPet.insertBefore(formExpansion, addPetBtn); //insert clone
+    }
 
 
-// Handling of specie/breed input
-//Variables
-const breed = document.createElement("input");
-const jsBreed = document.getElementById("js-breed")
+  //HANDLE "WHICH ONE?", BREED-SPECIE AND CHIPNUMBER INPUT
+    //*Initial Variables 
+     const elements = Array.from(document.querySelectorAll('.random-id')); //select desired elements
+     let whichOne = document.createElement("input"); //create "Which One?" input
+     let breed = document.createElement("input"); //create breed-specie input
+     let chipnumber = document.createElement("input"); //create chipnumber input
 
-//Error Handling
-if (!petSelector || !jsBreed) {
-  // Handle the case of missing elements
-  console.error("Required elements not found.");
-} else {
-  // Handle the case of elements existing
-  breed.setAttribute('type', "text")
-};
+    //*Separation in classes + declaration of  variable
+      //Selectors
+       for (let i = 0; i < elements.length; i++) {
+        if (i % 6 === 0) {
+         elements[i].classList.add('selection'); //create classes for selectors
+        }
+       }
 
-//Activation of function to create the new breed/species input
-petSelector.addEventListener('change', function species() {
-  if (petSelector.value !== "pt") { //check the values
-    jsBreed.appendChild(breed); //create the breed/specie input
-  } else {
-    jsBreed.removeChild(breed);
-  } //delete the breed/specie input
-});
+       const selectors = document.querySelectorAll('.selection'); //select the selectors
 
-//Activation of function to name the placeholder of the new breed/species input
-petSelector.addEventListener('change', function placeholders() {
-  if (petSelector.value === "dg" || petSelector.value === "ct") { //check the values
-    breed.setAttribute('placeholder', "Breed"); //set the placeholder attribute "Breed"
-  } else {
-    breed.removeAttribute('placeholder', "Breed"); //remove placeholder attribute "Breed"
-    breed.setAttribute('placeholder', "Specie");
-  } //set the placeholder attribute "Specie"
-});
+        //handle missing selectors
+         if (!selectors){
+           console.error("Missing Selectors.");
+         }
 
-//Handling the format breed/specie + which one? inputs
-if (petSelector.value === "otr") {
-  breed.style.marginRight = "10px"; // Move breed input to the right
-} else {
-  breed.style.marginLeft = "0"; // Reset breed input margin-left
-}
+      //"Which one?" place   
+       for (let i = 0; i < elements.length; i++) {
+        if (i % 6 === 1) {
+         elements[i].classList.add('whichOnePlace'); //create classes for the places for "Which one?"" elements
+        }
+       }
+
+       const whichOnePlace = document.querySelectorAll('.whichOnePlace'); //select the places for "Which one?"" elements
+
+        //handle missing places for "Which One?" input
+         if (!whichOnePlace){
+           console.error("No place for 'Which One?' input");
+         }
+
+      //Breed-Specie place
+       for (let i = 0; i < elements.length; i++) {
+        if (i % 6 === 2) {
+         elements[i].classList.add('breedPlace'); //create classes fors for breed-specie input
+        }
+       }
+
+       const breedPlace = document.querySelectorAll('.breedPlace'); //select the place for breed-specie input
+
+        //handle missing place for breed-specie input
+         if (!breedPlace) {
+           console.error("No place for breed-specie input.")
+         }
+
+      //"Yes" Radio Buttons
+       for (let i = 0; i < elements.length; i++) {
+        if (i % 6 === 3) {
+         elements[i].classList.add('yesCheckbox'); //create classes for 'yes' radio buttons
+        }
+       }
+
+       const yesCheckbox = document.querySelectorAll('.yesCheckbox'); //select 'yes' radio buttons
+
+        //handle missing "yes" checkbox
+         if (!yesCheckbox) {
+           console.error("Missing 'yes' checkbox.");
+         }
+
+      //"No" Radio Buttons
+       for (let i = 0; i < elements.length; i++) {
+        if (i % 6 === 2) {
+         elements[i].classList.add('noCheckbox'); //create classes for 'no' radio buttons
+        }
+       }
+
+       const noCheckbox = document.querySelectorAll('.noCheckbox'); //select 'no' radio buttons
+
+         //handle missing "no" checkbox
+          if (!noCheckbox) {
+           console.error("Missing 'no' checkbox.");
+          }
 
 
-//Handling of Chipnumber Input
-//Variables
-const yesCheckbox = document.getElementById("yes-checkbox");
-const noCheckbox = document.getElementById("no-checkbox");
-const jsChipnumber = document.getElementById("js-chipnumber");
-const chipnumber = document.createElement("input");
+      //Chipnumber Place 
+       for (let i = 0; i < elements.length; i++) {
+        if (i % 6 === 5) {
+         elements[i].classList.add('chipnumberPlace'); //create classes for chipnumber input
+        }
+      }
 
-//Error Handling
-if (!yesCheckbox || !jsChipnumber || !noCheckbox) {//Handle the case of missing elements
-  console.error("Required elements not found.")
-} else { //Handle the case of existing elements                                         
-  chipnumber.setAttribute('type', "number");
-  chipnumber.setAttribute('placeholder', "Chipnumber");
-}
+      const chipnumberPlace = document.querySelectorAll('.chipnumberPlace'); //selct the place for chipnumber input
+     
+       //handle missing place for chipnumber input
+        if (!yesCheckbox) {
+         console.error("No place for chipnumber input.");
+        }
 
-//Activation of function to create chipnumber input
-yesCheckbox.addEventListener('change', function chipnumberCreateInput() {
-  if (yesCheckbox.checked === true) { //check if yesCheckbox is checked
-    jsChipnumber.appendChild(chipnumber); //show the chipnumber input
-  } else {
-    jsChipnumber.removeChild(chipnumber); //hide the chipnumber input
-  }
-})
+    //Handle "Which one?" + breed-specie input
+      //initial functions
+       function appendWhichOne(){
+         whichOnePlace.appendChild(whichOne); //function to append "which one"
+       }
 
-//Activation of function to delete chipnumber input
-noCheckbox.addEventListener('change', function chipnumberDeleteInput() {
-  if (noCheckbox.checked === true) { //check if noCheckbox is checked
-    jsChipnumber.removeChild(chipnumber);
-  } //hide the chipnumber input
-})
+       function removeWhichOne(){
+         whichOnePlace.removeChild(whichOne); //function to remove"which one"
+      }
 
+       function appendBreed() {
+         breedPlace.appendChild(breed); //function to append breed-specie
+       }
 
-//Function for Add pet button
-//Variables
-const createAddPet = document.getElementById("create-add-pet"); //select the elements to be cloned
-const addPetBtn = document.getElementById("add-pet"); //select the 'add pet' button 
-const parentAddPet = document.getElementById("parent-add-pet"); //select the parent
+       function removeBreed() {
+         breedPlace.removeChild(breed); //function to removebreed-specie
+      }
 
-// Function to clone elements
-function createFormExpansion() {
-  return createAddPet.cloneNode(true);
-}
+       function setPlaceholderBreedSpecie(){
+         if (selectors.value === "dg" || selectors.value === "ct"){
+           breed.setAttribute("placeholder","Breed"); //set the placeholder to Breed
+         }  else {
+             breed.setAttribute("placeholder","Specie"); //set the placeholder to Specie
+           }
+       }
+      
+      //looping functions
+       function otrValue (){
+        if (selectors.values === "otr"){
+          whichOnePlace.forEach(function checkWOP(loopingWOP){
+            appendWhichOne(loopingWOP);
+          })
+        } if (breedPlace.contains(breed)) {
+          Array.from(breedPlace).forEach(function checkingBreed(loopBS){
+            removeBreed(loopBS);
+          })
+        }
+       }
 
-//Error handling 
-if (!createAddPet || !addPetBtn || !parentAddPet) {
-  //Handle the case of missing elements
-  console.error("Required elements not found.");
-}
-
-//Function to add registration for one more pet
-function createMorePets() {
-  const formExpansion = createFormExpansion(); //create a new formExpansion element
-  parentAddPet.insertBefore(formExpansion, addPetBtn); //insert clone
-}
+       function otrValueNo (){
+        if (selectors.values !== "otr"){
+          breedPlace.forEach(function checkBreed(loopingBS){
+           appendBreed(loopingBS);
+           setPlaceholderBreedSpecie(loopingBS);
+          });
+          if (whichOnePlace.contains(whichOne)){
+            Array.from(whichOnePlace).forEach(function checkingWOP(loopWop){
+              removeWhichOne(loopWop);
+            });
+          };
+        }
+       }
+      
+      //Event Listener
+       selectors.forEach(function checkSelectors (loopingSelectors){
+        loopingSelectors.addEventListener('change', function checkSelection(){
+          otrValue();
+          otrValueNo();
+       })
+      })

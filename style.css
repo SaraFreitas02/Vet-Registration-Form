@@ -79,6 +79,7 @@ form {
 fieldset {
   /*customization: fieldsets*/
   border-radius: 20px;
+  min-width: 382px;
 }
 
 legend {

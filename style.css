@@ -112,6 +112,10 @@ input {
   justify-content: flex-start;
 }
 
+.alert-messages {
+  color: red;
+}
+
 
 /*footer*/
 footer {

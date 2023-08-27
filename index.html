@@ -43,7 +43,7 @@
 
   <!-- Main -->
   <main class="container2-form align-items">
-    <form class="container2-form">
+    <form id="form" class="container2-form">
 
       <!-- Owner Info -->
       <fieldset>
@@ -74,21 +74,21 @@
 
         <div id="create-add-pet">
           <div class="container1-form just-cont-flex-start">
-            <p>Pet:<span class="span-pet-name"></span></p>
+            <p id="display-pet-name"></p>
           </div>
           <div class="container2-form">
             <div class="container1-form">
 
               <!-- Other Pet Info -->
               <div class="container2-form flex-basis margin-top2">
-                <input class="margin-bottom2" name="pet-name" placeholder="Name">
+                <input class="margin-bottom2" name="petName" id="pet-name" placeholder="Name">
                 <label for="date-of-birth">Date Of Birth</label>
                 <input name="dateOfBirth" id="date-of-birth" type="date">
               </div>
 
               <!-- Type of Pet-->
               <div class="container2-form flex-basis margin-top2">
-                <select name="pet-list" class="random-id">
+                <select id="pet-list">
                   <option disabled selected value="pt">Pet</option>
                   <option value="dg">Dog</option>
                   <option value="ct">Cat</option>
@@ -98,8 +98,8 @@
                 </select>
 
                 <!-- Javascript Inputs 1 -->
-                <div class="container2-form random-id"></div>
-                <div class="container2-form random-id"></div>
+                <div id="div-which-pet" class="container2-form"></div>
+                <div id="div-breed-specie" class="container2-form"></div>
               </div>
             </div>
 
@@ -110,17 +110,17 @@
                 <div id="checkboxes" class="container1-form align-items">
                   <div class="container1-form flex-basis">
                     <label for="yes-checkbox">Yes</label>
-                    <input name="Checkbox" class="random-id" type="radio">
+                    <input name="Checkbox" type="radio">
                   </div>
                   <div class="container1-form flex-basis">
                     <label for="no-checkbox">No</label>
-                    <input name="Checkbox" class="random-id" type="radio">
+                    <input name="Checkbox" type="radio">
                   </div>
                 </div>
               </div>
 
               <!-- Javascript Inputs 2 -->
-              <div class="container2-form margin-bottom2 random-id"></div>
+              <div class="container2-form margin-bottom2"></div>
             </div>
 
             <!-- Medical History/Obs -->
@@ -156,6 +156,7 @@
           <input name="confirmPassword" id="confirm-password" class="flex-basis" type="password"
             placeholder="Confirm Password">
         </div>
+        <p id="password-alert" class="alert-messages"></p>
       </fieldset>
 
       <!-- Submit Button-->

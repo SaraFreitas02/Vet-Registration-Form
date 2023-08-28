@@ -19,6 +19,7 @@ Open the `index.html` file in your web browser (or click [here](https://sarafrei
 You will be able to:
 - Fill out the registration form with client and pet information.
 - Add information for multiple pets using the "Add a Pet" button.
+- Observe the form displaying the name of the pet in order to organize and separate each pet's information.
 - Customize the form based on the type of pet (e.g., dog, cat, etc.).
 - Indicate whether each pet has a chip number.
 - Provide medical history and observations for each pet.

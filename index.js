@@ -62,9 +62,43 @@
       displayBreedSpecie ();
      }
    
-   //Display Created Inputs
+   //Display or don't display Created Inputs
     petSelector.addEventListener('change', checkPetSelectorValue) //call the checking function and display inputs
-      
+
+//HANDLE CHIPNUMBER INPUT
+   //Variables 
+     const yesCheckbox = document.getElementById("yes-checkbox"); //select the yes radio button
+     const noCheckbox = document.getElementById("no-checkbox"); //select the no radio button
+     const chipnumberDiv = document.getElementById("chipnumber-div"); //selet the div to append the input to
+     const chipnumberInput = document.createElement("input"); //create the chipnumber input
+
+     chipnumberInput.setAttribute("placeholder","Chipnumber"); //set the placeholder for the chipnumber input
+
+   //Error Handling
+     if (!yesCheckbox || !noCheckbox || !chipnumberDiv) {
+      //handle the case of missing elements
+       console.error("Elements Missing - Chipnumber.");
+     }  
+
+    //Functions to display and not display chipnumber input
+      function checkYescheckbox (){
+        if (yesCheckbox.checked){
+          chipnumberDiv.appendChild(chipnumberInput); //append the input
+        }
+      }
+
+      function checkNoCheckbox (){  
+        if (noCheckbox.checked) {
+          if (chipnumberDiv.contains(chipnumberInput)){
+            chipnumberDiv.removeChild(chipnumberInput); //remove the input
+          }
+        }
+      }
+  
+    //Display or don't display the chipnumber input    
+      yesCheckbox.addEventListener('change', checkYescheckbox); //display the input
+      noCheckbox.addEventListener('change', checkNoCheckbox) //hide the input
+
 //HANDLE ADD PET BUTTON
    //Variables
      const createAddPet = document.getElementById("create-add-pet"); //select the elements to be cloned

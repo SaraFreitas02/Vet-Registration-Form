@@ -11,6 +11,7 @@
   text-decoration: none;
   color: rgb(19, 66, 19);
   font-family: Roboto, sans-serif;
+  font-size: 20px;
 }
 
 /*dropdown-menu button*/
@@ -19,7 +20,7 @@
   background-color: transparent;
   border-radius: 20%;
   padding: 16px;
-  font-size: 16px;
+  font-size: 25px;
   border: none;
 }
 
@@ -206,13 +207,15 @@ footer p {
   color: white;
   background-color: rgb(19, 66, 19);
   border-radius: 20px;
+  font-size: 17px;
 }
 
 .dropdown-content a:hover {
   /* hover customization: navigation links*/
-  background-color: gray;
+  background-color: rgb(19, 66, 19);
   border-radius: 20px;
   color: white;
+  font-size: 18px;
 }
 
 .dropdown:hover .dropdown-content {
@@ -246,12 +249,14 @@ select:hover {
 .container-links-footer a:hover {
   /*hover customization: footer links*/
   color: white;
-  background-color: black;
+  background-color: rgb(19, 66, 19);
+  font-size: 17px;
 }
 
 .icon-footer:hover {
   /*hover customization: footer icons*/
   font-weight: bold;
+  color: rgb(19, 66, 19);
 }
 
 

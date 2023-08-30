@@ -123,8 +123,8 @@
     }
 
 //HANDLE SUBMISSION OF REGISTRATION
-   //Variables
-      //owner info validation
+   //Handle empty fields
+      //variables
        const ownerFirstName = document.getElementById("owner-first-name"); //select first name input
        const ownerLastName = document.getElementById("owner-last-name"); //select last name input
        const ownerStreet = document.getElementById("owner-street"); //select street input
@@ -133,8 +133,9 @@
        const ownerCity = document.getElementById("owner-city"); //select city input
        const ownerPhoneNum = document.getElementById("owner-phone-num"); //select phone number input
        const ownerEmail = document.getElementById("owner-email"); //select email input
+       const petDateOfBirth = document.getElementById("pet-date-of-birth"); //select date of birth input
 
-       const ownerInfoFields = [
+       const infoFields = [ //group variables 
         ownerFirstName,
         ownerLastName,
         ownerStreet,
@@ -142,69 +143,116 @@
         ownerZipCode,
         ownerCity,
         ownerPhoneNum,
-        ownerEmail
+        ownerEmail,
+        petNameInput, //selected on line 5
+        petDateOfBirth
        ]
 
-       const ownerInfoFilledAlert = document.getElementById("owner-info-filled-alert"); //select alert place
-
-      //password validation  
-       const createPassword = document.getElementById("create-password"); //select the create password input
-       const confirmPassword = document.getElementById("confirm-password"); //select the confirm password input
-       const passwordAlert = document.getElementById("password-alert"); //select the place to display the password alert
-     
-      //validate form 
-       const form = document.getElementById("form"); //select form
-   
-   //Error Handling 
-     if (!ownerFirstName || !ownerLastName || !ownerStreet || !ownerHouseNum || !ownerCity || !ownerPhoneNum || !ownerEmail || !ownerInfoFilledAlert) { //owner info validation errors
-       //handle the case of missing elements 
-         console.error("Missing Elements - Owner Info Validation");
-      } 
-
-     if (!createPassword || !confirmPassword || !passwordAlert) { //password validation errors
-       //handle the case of missing elements
-        console.error("Missing Elements - Password Validation");
-     } 
-
-   //Functions
-      //owner info validation
-       function checkOwnerInfoFilled () {
-        for (let i = 0; i < ownerInfoFields.length; i++) {
-          if (ownerInfoFields[i].value.length === 0) {
-            ownerInfoFields[i].style.borderColor = "red";
-          } else {
-            ownerInfoFields[i].style.borderColor = "";
-          }
-        } 
-
-        if (ownerFirstName.value.length === 0 || ownerLastName.value.length === 0|| ownerStreet.value.length === 0  || ownerHouseNum.value.length ===0 || ownerCity.value.length ===0 || ownerPhoneNum.value.length === 0 || ownerEmail.value.length === 0 || ownerInfoFilledAlert.value.length === 0) {
-          ownerInfoFilledAlert.textContent = "Please, make sure to fill all the fields out."
-          return false;
-        } else {
-          return true;
-        }
-      }
-
-      //password validation
-       function validatePasswords (){  //validate passwords
-        if (createPassword.value !== confirmPassword.value){
-           passwordAlert.textContent = "The passwords don't match. Please, make sure you write the same password on both fields."; //prepare alert
-           return false; //block form submission
-        } else {
-           return true; //submit form
-        }
-       }
+       const InfoFilledAlert = document.getElementById("info-filled-alert"); //select non filled alert place
       
-      //form validation
-      function validateForm (){
-        if (checkOwnerInfoFilled === true && validatePasswords === true) {
-          return true;
-        } else if (checkOwnerInfoFilled === false || validatePasswords === false) {
+      //error handling
+      if (
+        !ownerFirstName || !ownerLastName 
+        || !ownerStreet || !ownerHouseNum 
+        || !ownerCity || !ownerPhoneNum 
+        || !ownerEmail || !InfoFilledAlert
+        || !petDateOfBirth
+        ) { //owner info validation errors
+         //handle the case of missing elements 
+           console.error("Missing Elements - Empty Fields Check");
+        }
+      
+      //functions 
+       function checkInfoFilled () {
+         for (let i = 0; i < infoFields.length; i++) {
+           if (infoFields[i].value.length === 0) {
+             infoFields[i].style.borderColor = "red";
+           } else {
+             infoFields[i].style.borderColor = "";
+           }
+         } 
+
+        if (
+          ownerFirstName.value.length === 0 || ownerLastName.value.length === 0
+          || ownerStreet.value.length === 0  || ownerHouseNum.value.length ===0 
+          || ownerCity.value.length === 0 || ownerPhoneNum.value.length === 0 
+          || ownerEmail.value.length === 0 || InfoFilledAlert.value.length === 0
+          || petNameInput.value.length === 0 || petDateOfBirth.value.length === 0
+          ) {
+          InfoFilledAlert.textContent = "Please, make sure to fill all the red highlighted fields out.";
           return false;
+        } else {
+          InfoFilledAlert.textContent = "";
+          return true;
         }
       }
+    
+    //Validate pet selection
+      //variables
+       const petSelectorAlert = document.getElementById("pet-selector-alert");
+      
+      //error handling
+       if (!petSelectorAlert) {
+        //handle case of missing elements
+         console.error("Missing Element - petSelectorAlert")
+       }
+
+      //function
+       function validatePetSelection () {
+        if (petSelector.value === "pt"){ //petSelector variable selection in line 21
+          petSelector.style.borderColor = "red";
+          petSelectorAlert.textContent = "Please, select a pet type.";
+          return false;
+        } else {
+          return true;
+        }
+       }  
+      
+    //Password validation  
+      //variables    
+        const createPassword = document.getElementById("create-password"); //select the create password input
+        const confirmPassword = document.getElementById("confirm-password"); //select the confirm password input
+        const passwordAlert = document.getElementById("password-alert"); //select the place to display the password alert
+        
+      //error handling
+        if ( 
+          !createPassword 
+          || !confirmPassword 
+          || !passwordAlert
+          ) { 
+            //handle the case of missing elements
+             console.error("Missing Elements - Password Validation");
+        } 
+      
+      //functions
+       function validatePasswords (){  //validate passwords
+         if (createPassword.value !== confirmPassword.value){
+            passwordAlert.textContent = "The passwords don't match. Please, make sure you write the same password on both fields."; //prepare alert
+            return false; //block form submission
+         } else {
+            passwordAlert.textContent = "";
+            return true; //submit form
+         }
+        }
+      
+    //Validate form 
+      //variables
+       const petForm = document.getElementById("form"); //select form
    
-   //Call the funcion
-     form.onsubmit = function validateSubmission () {
-       return validateForm ();
-     }
+      //error handling 
+       if (!petForm){
+         //handle case of missing elements
+          console.error("Form missing");
+       }
+     
+      //function
+      function validateForm (){
+       return (validatePasswords() && validatePetSelection() && checkInfoFilled());
+      }
+      
+      //call function
+       document.addEventListener("DOMContentLoaded", function callValidatingFunction() {
+        petForm.onsubmit = function validateSubmission () {
+          return validateForm();
+         } 
+      })

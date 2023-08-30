@@ -34,8 +34,8 @@
    //Functions to display created inputs
      function displayWhichPet (){
       if (petSelector.value === "otr"){
-        whichPetDiv.appendChild(whichPet); //append which-pet
       } else {
+        whichPetDiv.appendChild(whichPet); //append which-pet
         if (whichPetDiv.contains(whichPet)) {
           whichPetDiv.removeChild(whichPet); //remove which-pet
         }
@@ -44,8 +44,8 @@
      
      function displayBreedSpecie (){
       if (petSelector.value !== "pt"){
-        breedSpecieDiv.appendChild(breedSpecie); //append breed-specie
       } else {
+        breedSpecieDiv.appendChild(breedSpecie); //append breed-specie
         if (breedSpecieDiv.contains(breedSpecie)){
           breedSpecieDiv.removeChild(breedSpecie); //remove breed-specie
         }
@@ -83,8 +83,8 @@
     //Functions to display and not display chipnumber input
       function checkYescheckbox (){
         if (yesCheckbox.checked){
-          chipnumberDiv.appendChild(chipnumberInput); //append the input
         }
+        chipnumberDiv.appendChild(chipnumberInput); //append the input
       }
 
       function checkNoCheckbox (){  
@@ -122,6 +122,73 @@
       parentAddPet.insertBefore(formExpansion, addPetBtn); //insert clone
     }
 
+//HANDLE PASSWORD REQUIREMENTS
+    //Variables
+     const createPassword = document.getElementById("create-password"); //select the create password input
+     const passwordRequirements = document.getElementById("password-requirements"); //select place for requirements
+     
+    //Create icons 
+     const crossIcon = document.createElement("i");
+       crossIcon.classList.add("fa", "fa-times-circle-o");
+       crossIcon.setAttribute("aria-hidden", "true");
+     const checkIcon = document.createElement("i");
+       crossIcon.classList.add("fa", "fa-check-circle-o");
+       crossIcon.setAttribute("aria-hidden", "true");
+     
+    //Create p elements 
+    const digitsRequirement = document.createElement("p");
+    digitsRequirement.textContent = "6 characters minimum";
+    digitsRequirement.appendChild(crossIcon);
+       digitsRequirement.style.color = "red";
+     const specialCharacterRequirement = document.createElement("p");
+     specialCharacterRequirement.textContent = "1 special character minimum ";
+     specialCharacterRequirement.appendChild(crossIcon);
+       specialCharacterRequirement.style.color = "red";
+     const uppercaseRequirement = document.createElement("p");
+     uppercaseRequirement.textContent = "1 uppercase letter minimum ";
+     uppercaseRequirement.appendChild(crossIcon);
+       uppercaseRequirement.style.color = "red";
+     const lowercaseRequirement = document.createElement("p");
+     lowercaseRequirement.textContent = "1 lowercase letter minimum ";
+     lowercaseRequirement.appendChild(crossIcon);
+       lowercaseRequirement.style.color = "red";
+     const numberRequirement = document.createElement("p");
+     numberRequirement.textContent = "1 number minimum ";
+     numberRequirement.appendChild(crossIcon);
+       numberRequirement.style.color = "red";
+     const notOwnerNameRequirement = document.createElement("p");
+     notOwnerNameRequirement.textContent = "Cannot match owner name ";
+     notOwnerNameRequirement.appendChild(crossIcon);
+       notOwnerNameRequirement.style.color = "red";
+     const notPetNameRequirement = document.createElement("p");
+     notPetNameRequirement.textContent = "Cannot match pet name ";
+     notPetNameRequirement.appendChild(crossIcon);
+       notPetNameRequirement.style.color = "red";
+     const notPhoneNumberRequirement = document.createElement("p");
+     notPhoneNumberRequirement.textContent = "Cannot match phone number ";
+     notPhoneNumberRequirement.appendChild(crossIcon);
+       notPhoneNumberRequirement.style.color = "red";
+
+    //Error Handling
+     if (!createPassword) {
+      //handle case of missing elements
+       console.error("Missing Element - create password")
+     }
+     
+    //functions
+      function createPasswordRequirements () {
+        passwordRequirements.appendChild(specialCharacterRequirement);
+        passwordRequirements.appendChild(digitsRequirement);
+       passwordRequirements.appendChild(uppercaseRequirement);
+       passwordRequirements.appendChild(lowercaseRequirement);
+       passwordRequirements.appendChild(numberRequirement);
+       passwordRequirements.appendChild(notOwnerNameRequirement);
+       passwordRequirements.appendChild(notPetNameRequirement);
+       passwordRequirements.appendChild(notPhoneNumberRequirement);
+      }
+
+    //Call functions
+     createPassword.addEventListener('input', createPasswordRequirements) 
 //HANDLE SUBMISSION OF REGISTRATION
    //Handle empty fields
       //variables
@@ -239,15 +306,10 @@
     //Password validation  
       //variables    
         const passwordAlert = document.getElementById("password-alert"); //select the place to display the password alert
-        const createPassword = document.getElementById("create-password"); //select the create password input
         const confirmPassword = document.getElementById("confirm-password"); //select the confirm password input
-      
+
       //error handling
-        if ( 
-          !createPassword 
-          || !confirmPassword 
-          || !passwordAlert
-          ) { 
+        if ( !passwordAlert || !confirmPassword ) { 
             //handle the case of missing elements
              console.error("Missing Elements - Password Validation");
         } 

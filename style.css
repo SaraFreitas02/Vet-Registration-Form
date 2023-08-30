@@ -246,6 +246,10 @@ select:hover {
   cursor: pointer;
 }
 
+form button :hover {
+  cursor: pointer;
+}
+
 .container-links-footer a:hover {
   /*hover customization: footer links*/
   color: white;

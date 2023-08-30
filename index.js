@@ -145,7 +145,7 @@
         ownerPhoneNum,
         ownerEmail,
         petNameInput, //selected on line 5
-        petDateOfBirth
+        petDateOfBirth,
        ]
 
        const InfoFilledAlert = document.getElementById("info-filled-alert"); //select non filled alert place
@@ -204,16 +204,44 @@
           petSelectorAlert.textContent = "Please, select a pet type.";
           return false;
         } else {
+          petSelector.style.borderColor = "";
+          petSelectorAlert.textContent = "";
           return true;
         }
        }  
+
+    //Radio Buttons and Chipnumber Validation
+      //variables
+       const radioButtonsAlert = document.getElementById("radio-buttons-alert");
       
+      //error handling
+       if (!radioButtonsAlert) {
+        //handle the case of missing elements
+         console.error("Missing element - radio button alert");
+       }
+      
+      //function
+       function validateRadioButtons () {
+         if (!(yesCheckbox.checked) && !(noCheckbox.checked)) {
+          radioButtonsAlert.textContent = "Please, choose if yes or no.";
+          return false;
+         } else if (yesCheckbox.checked && chipnumberInput.value.length === 0) {
+          chipnumberInput.style.borderColor = "red";
+          radioButtonsAlert.textContent = "Please, write the chip number or choose no.";
+          return false;
+         } else {
+          chipnumberInput.style.borderColor = "";
+          radioButtonsAlert.textContent = "";
+          return true;
+         }
+       }
+
     //Password validation  
       //variables    
+        const passwordAlert = document.getElementById("password-alert"); //select the place to display the password alert
         const createPassword = document.getElementById("create-password"); //select the create password input
         const confirmPassword = document.getElementById("confirm-password"); //select the confirm password input
-        const passwordAlert = document.getElementById("password-alert"); //select the place to display the password alert
-        
+      
       //error handling
         if ( 
           !createPassword 
@@ -226,14 +254,24 @@
       
       //functions
        function validatePasswords (){  //validate passwords
-         if (createPassword.value !== confirmPassword.value){
-            passwordAlert.textContent = "The passwords don't match. Please, make sure you write the same password on both fields."; //prepare alert
-            return false; //block form submission
+         if (createPassword.value.length === 0 || confirmPassword.value.length === 0){
+           createPassword.style.borderColor = "red";
+           confirmPassword.style.borderColor = "red";
+           passwordAlert.textContent = "Don't forget the password."; //prepare alert
+           return false; //block form submission
+         } else if (createPassword.value !== confirmPassword.value){
+           createPassword.style.borderColor = "red";
+           confirmPassword.style.borderColor = "red";
+           passwordAlert.textContent = "The passwords don't match. Please, make sure you write the same password on both fields."; //prepare alert
+          return false; //block form submission
          } else {
-            passwordAlert.textContent = "";
-            return true; //submit form
-         }
+           createPassword.style.borderColor = "";
+           confirmPassword.style.borderColor = "";
+           passwordAlert.textContent = "";
+           return true; //submit form
+         }    
         }
+        
       
     //Validate form 
       //variables
@@ -246,11 +284,19 @@
        }
      
       //function
+      function validateSelections (){
+        return validatePetSelection () && validateRadioButtons(); 
+      }
+
+      function validateFields (){
+        return validatePasswords() && checkInfoFilled();
+      }
+
       function validateForm (){
-       return (validatePasswords() && validatePetSelection() && checkInfoFilled());
+       return validateSelections() && validateFields();
       }
       
-      //call function
+      //call function validateForm
        document.addEventListener("DOMContentLoaded", function callValidatingFunction() {
         petForm.onsubmit = function validateSubmission () {
           return validateForm();

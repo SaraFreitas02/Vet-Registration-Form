@@ -50,21 +50,22 @@
         <legend><h2>Owner Info</h2></legend>
         <div class="container2-form">
           <div class="container1-form">
-            <input name="ownerFirstName" class="flex-basis" autocomplete="given-name" placeholder="First Name">
-            <input name="ownerLastName" class="flex-basis" autocomplete="family-name" placeholder="Last Name">
+            <input name="ownerFirstName" id="owner-first-name" class="flex-basis" autocomplete="given-name" placeholder="First Name">
+            <input name="ownerLastName" id="owner-last-name" class="flex-basis" autocomplete="family-name" placeholder="Last Name">
           </div>
           <div class="container1-form">
-            <input name="street" class="flex-grow" autocomplete="off" placeholder="Street">
-            <input name="houseNum" id="number" autocomplete="off" placeholder="Num">
+            <input name="street" id="owner-street" class="flex-grow" autocomplete="off" placeholder="Street">
+            <input name="houseNum" id="owner-house-num" autocomplete="off" placeholder="Num">
           </div>
           <div class="container1-form">
-            <input name="zipCode" id="zip-code" autocomplete="off" placeholder="Zip Code">
-            <input name="city" class="flex-grow" autocomplete="off" placeholder="City">
+            <input name="zipCode" id="owner-zip-code" autocomplete="off" placeholder="Zip Code">
+            <input name="city" id="owner-city" class="flex-grow" autocomplete="off" placeholder="City">
           </div>
           <div class="container1-form">
-            <input name="phone" id="phone-number" autocomplete="off" placeholder="Phone Number">
-            <input name="email" class="flex-grow" type="email" autocomplete="email" placeholder="Email">
+            <input name="phone" id="owner-phone-num" autocomplete="off" placeholder="Phone Number">
+            <input name="email" id="owner-email" class="flex-grow" type="email" autocomplete="email" placeholder="Email">
           </div>
+            <p id="owner-info-filled-alert" class="alert-messages"></p>
         </div>
       </fieldset>
 
@@ -161,7 +162,7 @@
 
       <!-- Submit Button-->
        <div class="container1-form">
-        <button class="margin-top2" id="submit-reg">Submit Registration</button>
+        <button type="submit" class="margin-top2" id="submit-reg">Submit Registration</button>
        </div> 
     </form>
   </main>

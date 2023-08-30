@@ -124,28 +124,87 @@
 
 //HANDLE SUBMISSION OF REGISTRATION
    //Variables
-     const createPassword = document.getElementById("create-password"); //select the create password input
-     const confirmPassword = document.getElementById("confirm-password"); //select the confirm password input
-     const passwordAlert = document.getElementById("password-alert"); //select the place to display the password alert
-     const form = document.getElementById("form"); //select form
+      //owner info validation
+       const ownerFirstName = document.getElementById("owner-first-name"); //select first name input
+       const ownerLastName = document.getElementById("owner-last-name"); //select last name input
+       const ownerStreet = document.getElementById("owner-street"); //select street input
+       const ownerHouseNum = document.getElementById("owner-house-num"); //select house num input
+       const ownerZipCode = document.getElementById("owner-zip-code"); //select zip code input
+       const ownerCity = document.getElementById("owner-city"); //select city input
+       const ownerPhoneNum = document.getElementById("owner-phone-num"); //select phone number input
+       const ownerEmail = document.getElementById("owner-email"); //select email input
+
+       const ownerInfoFields = [
+        ownerFirstName,
+        ownerLastName,
+        ownerStreet,
+        ownerHouseNum,
+        ownerZipCode,
+        ownerCity,
+        ownerPhoneNum,
+        ownerEmail
+       ]
+
+       const ownerInfoFilledAlert = document.getElementById("owner-info-filled-alert"); //select alert place
+
+      //password validation  
+       const createPassword = document.getElementById("create-password"); //select the create password input
+       const confirmPassword = document.getElementById("confirm-password"); //select the confirm password input
+       const passwordAlert = document.getElementById("password-alert"); //select the place to display the password alert
+     
+      //validate form 
+       const form = document.getElementById("form"); //select form
    
    //Error Handling 
-     if (!createPassword || !confirmPassword || !passwordAlert || !form) {
+     if (!ownerFirstName || !ownerLastName || !ownerStreet || !ownerHouseNum || !ownerCity || !ownerPhoneNum || !ownerEmail || !ownerInfoFilledAlert) { //owner info validation errors
+       //handle the case of missing elements 
+         console.error("Missing Elements - Owner Info Validation");
+      } 
+
+     if (!createPassword || !confirmPassword || !passwordAlert) { //password validation errors
        //handle the case of missing elements
-        console.error("Missing Elements.");
+        console.error("Missing Elements - Password Validation");
      } 
 
-   //Function to validate submission 
-     function validateForm (){
-       if (createPassword.value !== confirmPassword.value){
-         passwordAlert.textContent = "The passwords don't match. Please, make sure you write the same password on both fields."; //prepare alert
-         return false; //block form submission
-       } else {
-         return true; //submit form
+   //Functions
+      //owner info validation
+       function checkOwnerInfoFilled () {
+        for (let i = 0; i < ownerInfoFields.length; i++) {
+          if (ownerInfoFields[i].value.length === 0) {
+            ownerInfoFields[i].style.borderColor = "red";
+          } else {
+            ownerInfoFields[i].style.borderColor = "";
+          }
+        } 
+
+        if (ownerFirstName.value.length === 0 || ownerLastName.value.length === 0|| ownerStreet.value.length === 0  || ownerHouseNum.value.length ===0 || ownerCity.value.length ===0 || ownerPhoneNum.value.length === 0 || ownerEmail.value.length === 0 || ownerInfoFilledAlert.value.length === 0) {
+          ownerInfoFilledAlert.textContent = "Please, make sure to fill all the fields out."
+          return false;
+        } else {
+          return true;
+        }
+      }
+
+      //password validation
+       function validatePasswords (){  //validate passwords
+        if (createPassword.value !== confirmPassword.value){
+           passwordAlert.textContent = "The passwords don't match. Please, make sure you write the same password on both fields."; //prepare alert
+           return false; //block form submission
+        } else {
+           return true; //submit form
+        }
        }
-     }
+      
+      //form validation
+      function validateForm (){
+        if (checkOwnerInfoFilled === true && validatePasswords === true) {
+          return true;
+        } else if (checkOwnerInfoFilled === false || validatePasswords === false) {
+          return false;
+        }
+      }
    
    //Call the funcion
      form.onsubmit = function validateSubmission () {
-       return validateForm (); //check if form meets requirements
+       return validateForm ();
      }

@@ -132,8 +132,8 @@
        crossIcon.classList.add("fa", "fa-times-circle-o");
        crossIcon.setAttribute("aria-hidden", "true");
      const checkIcon = document.createElement("i");
-       crossIcon.classList.add("fa", "fa-check-circle-o");
-       crossIcon.setAttribute("aria-hidden", "true");
+       checkIcon.classList.add("fa", "fa-check-circle-o");
+       checkIcon.setAttribute("aria-hidden", "true");
      
     //Create p elements 
     const digitsRequirement = document.createElement("p");

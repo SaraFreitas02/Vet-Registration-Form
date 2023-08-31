@@ -34,8 +34,8 @@
    //Functions to display created inputs
      function displayWhichPet (){
       if (petSelector.value === "otr"){
-      } else {
         whichPetDiv.appendChild(whichPet); //append which-pet
+      } else {
         if (whichPetDiv.contains(whichPet)) {
           whichPetDiv.removeChild(whichPet); //remove which-pet
         }
@@ -44,8 +44,8 @@
      
      function displayBreedSpecie (){
       if (petSelector.value !== "pt"){
+        breedSpecieDiv.appendChild(breedSpecie); //append breed-specie 
       } else {
-        breedSpecieDiv.appendChild(breedSpecie); //append breed-specie
         if (breedSpecieDiv.contains(breedSpecie)){
           breedSpecieDiv.removeChild(breedSpecie); //remove breed-specie
         }

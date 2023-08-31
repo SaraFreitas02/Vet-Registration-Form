@@ -226,7 +226,6 @@ footer p {
 
 .dropdown:hover #dropdown-button {
   /*hover customization: dropdown*/
-
   scale: 1.2;
   cursor: pointer;
 }
@@ -246,7 +245,7 @@ select:hover {
   cursor: pointer;
 }
 
-form button :hover {
+form button:hover {
   cursor: pointer;
 }
 

@@ -22,10 +22,10 @@ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 # Attribution
 
 This project uses free icons from:
- * **[FontAwesome v.4]**(https://fontawesome.com/v4/icons/)
+ * **[FontAwesome v.4](https://fontawesome.com/v4/icons/)**
    -  fa fa-times-circle-o
    -  fa fa-check-circle-o
- * **[FontAwesome v.6]**(https://fontawesome.com/icons)
+ * **[FontAwesome v.6](https://fontawesome.com/icons)**
    -  fa-solid fa-shield-dog
    -  fa-brands fa-x-twitter 
    -  fa-brands fa-facebook

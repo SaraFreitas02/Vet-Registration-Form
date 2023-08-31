@@ -21,8 +21,6 @@ You will also find the following files:
 
 ## How to Use
 
-## How to Use
-
 1. **Access the Form**: 
    - Open the `index.html` file in your web browser.
    - Alternatively, you can access the form online by clicking [here](https://sarafreitas02.github.io/Vet-Registration-Form/).
@@ -82,7 +80,7 @@ Contributions are encouraged! If you'd like to contribute to this project:
 
 ## Atributions
 This web-app uses the following resources:
-- Free Icons from [FontAwesome](https://fontawesome.com/) provided under an [MIT License](https://fontawesome.com/license/free).
+- Free Icons from [FontAwesome](https://fontawesome.com/) provided under an [MIT License](https://fontawesome.com/license/free) and a [Creative Commons License](https://creativecommons.org/licenses/by/4.0/).
 - Image(s) from [Unsplash](https://unsplash.com/) provided under the [Unsplash License](https://unsplash.com/license).
 - Gif(s) from [Pixabay](https://pixabay.com/) provided under a [Creative Commons License](https://pixabay.com/service/license-summary/).
 

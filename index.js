@@ -128,46 +128,70 @@
      const passwordRequirements = document.getElementById("password-requirements"); //select place for requirements
      
     //Create icons 
-     const crossIcon = document.createElement("i");
-       crossIcon.classList.add("fa", "fa-times-circle-o");
-       crossIcon.setAttribute("aria-hidden", "true");
-     const checkIcon = document.createElement("i");
-       checkIcon.classList.add("fa", "fa-check-circle-o");
-       checkIcon.setAttribute("aria-hidden", "true");
+     const Icon1 = document.createElement("i");
+       Icon1.classList.add("fa", "fa-times-circle-o");
+       Icon1.setAttribute("aria-hidden", "true");
+     const Icon2 = document.createElement("i");
+       Icon2.classList.add("fa", "fa-times-circle-o");
+       Icon2.setAttribute("aria-hidden", "true");
+     const Icon3 = document.createElement("i");
+       Icon3.classList.add("fa", "fa-times-circle-o");
+       Icon3.setAttribute("aria-hidden", "true"); 
+     const Icon4 = document.createElement("i");
+       Icon4.classList.add("fa", "fa-times-circle-o");
+       Icon4.setAttribute("aria-hidden", "true");
+     const Icon5 = document.createElement("i");
+       Icon5.classList.add("fa", "fa-times-circle-o");
+       Icon5.setAttribute("aria-hidden", "true");
+     const Icon6 = document.createElement("i");
+       Icon6.classList.add("fa", "fa-times-circle-o");
+       Icon6.setAttribute("aria-hidden", "true");
+     const Icon7 = document.createElement("i");
+       Icon7.classList.add("fa", "fa-times-circle-o");
+       Icon7.setAttribute("aria-hidden", "true");
      
     //Create p elements 
-    const digitsRequirement = document.createElement("p");
-    digitsRequirement.textContent = "6 characters minimum";
-    digitsRequirement.appendChild(crossIcon);
-       digitsRequirement.style.color = "red";
+    const minCharactersRequirement = document.createElement("p");
+       minCharactersRequirement.textContent = "6 characters minimum";
+       minCharactersRequirement.appendChild(Icon1);
+       minCharactersRequirement.style.color = "red";
+       minCharactersRequirement.classList.add("row-reverse");
+
      const specialCharacterRequirement = document.createElement("p");
-     specialCharacterRequirement.textContent = "1 special character minimum ";
-     specialCharacterRequirement.appendChild(crossIcon);
+       specialCharacterRequirement.textContent = "1 special character minimum ";
+       specialCharacterRequirement.appendChild(Icon2);
        specialCharacterRequirement.style.color = "red";
+       specialCharacterRequirement.classList.add("row-reverse");
+
      const uppercaseRequirement = document.createElement("p");
-     uppercaseRequirement.textContent = "1 uppercase letter minimum ";
-     uppercaseRequirement.appendChild(crossIcon);
+       uppercaseRequirement.textContent = "1 uppercase letter minimum ";
+       uppercaseRequirement.appendChild(Icon3);
        uppercaseRequirement.style.color = "red";
+       uppercaseRequirement.classList.add("row-reverse");
+
      const lowercaseRequirement = document.createElement("p");
-     lowercaseRequirement.textContent = "1 lowercase letter minimum ";
-     lowercaseRequirement.appendChild(crossIcon);
+       lowercaseRequirement.textContent = "1 lowercase letter minimum ";
+       lowercaseRequirement.appendChild(Icon4);
        lowercaseRequirement.style.color = "red";
+       lowercaseRequirement.classList.add("row-reverse");
+
      const numberRequirement = document.createElement("p");
-     numberRequirement.textContent = "1 number minimum ";
-     numberRequirement.appendChild(crossIcon);
+       numberRequirement.textContent = "1 number minimum ";
+       numberRequirement.appendChild(Icon5);
        numberRequirement.style.color = "red";
+       numberRequirement.classList.add("row-reverse");
+
      const notOwnerNameRequirement = document.createElement("p");
-     notOwnerNameRequirement.textContent = "Cannot match owner name ";
-     notOwnerNameRequirement.appendChild(crossIcon);
+       notOwnerNameRequirement.textContent = "Cannot match owner name ";
+       notOwnerNameRequirement.appendChild(Icon6);
        notOwnerNameRequirement.style.color = "red";
+       notOwnerNameRequirement.classList.add("row-reverse");
+
      const notPetNameRequirement = document.createElement("p");
-     notPetNameRequirement.textContent = "Cannot match pet name ";
-     notPetNameRequirement.appendChild(crossIcon);
+       notPetNameRequirement.textContent = "Cannot match pet name ";
+       notPetNameRequirement.appendChild(Icon7);
        notPetNameRequirement.style.color = "red";
-     const notPhoneNumberRequirement = document.createElement("p");
-     notPhoneNumberRequirement.textContent = "Cannot match phone number ";
-     notPhoneNumberRequirement.appendChild(crossIcon);
-       notPhoneNumberRequirement.style.color = "red";
+       notPetNameRequirement.classList.add("row-reverse");
 
     //Error Handling
      if (!createPassword) {
@@ -178,17 +202,205 @@
     //functions
       function createPasswordRequirements () {
         passwordRequirements.appendChild(specialCharacterRequirement);
-        passwordRequirements.appendChild(digitsRequirement);
-       passwordRequirements.appendChild(uppercaseRequirement);
-       passwordRequirements.appendChild(lowercaseRequirement);
-       passwordRequirements.appendChild(numberRequirement);
-       passwordRequirements.appendChild(notOwnerNameRequirement);
-       passwordRequirements.appendChild(notPetNameRequirement);
-       passwordRequirements.appendChild(notPhoneNumberRequirement);
+        passwordRequirements.appendChild(minCharactersRequirement);
+        passwordRequirements.appendChild(uppercaseRequirement);
+        passwordRequirements.appendChild(lowercaseRequirement);
+        passwordRequirements.appendChild(numberRequirement);
+        passwordRequirements.appendChild(notOwnerNameRequirement);
+        passwordRequirements.appendChild(notPetNameRequirement);
+      }
+
+      function checkMinCharactersRequirement (){
+        if (createPassword.value.length >= 6) {
+          minCharactersRequirement.style.color = "green";
+          Icon1.classList.remove("fa-times-circle-o");
+          Icon1.classList.add("fa-check-circle-o");
+          return true;
+        } else {
+          minCharactersRequirement.style.color = "red";
+          Icon1.classList.remove("fa-check-circle-o");
+          Icon1.classList.add("fa-times-circle-o");
+          return false;
+        }
+      }
+
+      function checkSpecialCharacterRequirement (){
+        let hasSpecialCharacter = false; 
+        for(let i = 0; i < createPassword.value.length; i++){
+          if (/[!@#$%^€&*()\-_=+\[\]{}|\\;:'",<.>/?]/.test(createPassword.value[i])) {
+            hasSpecialCharacter = true;
+            break;
+          }
+        }
+        if (hasSpecialCharacter) {
+          specialCharacterRequirement.style.color = "green";
+          Icon2.classList.remove("fa-times-circle-o");
+          Icon2.classList.add("fa-check-circle-o");
+          return true;
+        } else {
+          specialCharacterRequirement.style.color = "red";
+          Icon2.classList.remove("fa-check-circle-o");
+          Icon2.classList.add("fa-times-circle-o");
+          return false;
+        }
+      }  
+      
+      function checkNumberRequirement (){
+        let hasNumber = false; 
+        for(let i = 0; i < createPassword.value.length; i++){
+          if (/[0-9]/.test(createPassword.value[i])) {
+            hasNumber = true;
+            break;
+          }
+        }
+        if (hasNumber) {
+          numberRequirement.style.color = "green";
+          Icon5.classList.remove("fa-times-circle-o");
+          Icon5.classList.add("fa-check-circle-o");
+          return true;
+        } else {
+          numberRequirement.style.color = "red";
+          Icon5.classList.remove("fa-check-circle-o");
+          Icon5.classList.add("fa-times-circle-o");
+          return false;
+        }
+      }
+
+      function checkUppercaseRequiremement (){
+        let hasUppercase = false; 
+        for(let i = 0; i < createPassword.value.length; i++){
+          if (/[A-Z]/.test(createPassword.value[i])) {
+            hasUppercase = true;
+            break;
+          }
+        }
+        if (hasUppercase) {
+          uppercaseRequirement.style.color = "green";
+          Icon3.classList.remove("fa-times-circle-o");
+          Icon3.classList.add("fa-check-circle-o");
+          return true;
+        } else {
+          uppercaseRequirement.style.color = "red";
+          Icon3.classList.remove("fa-check-circle-o");
+          Icon3.classList.add("fa-times-circle-o");
+          return false;
+        }
+      }
+
+      function checkLowercaseRequirement (){
+        let hasLowercase = false; 
+        for(let i = 0; i < createPassword.value.length; i++){
+          if (/[a-z]/.test(createPassword.value[i])) {
+            hasLowercase = true;
+            break;
+          }
+        }
+        if (hasLowercase) {
+          lowercaseRequirement.style.color = "green";
+          Icon4.classList.remove("fa-times-circle-o");
+          Icon4.classList.add("fa-check-circle-o");
+          return true;
+        } else {
+          lowercaseRequirement.style.color = "red";
+          Icon4.classList.remove("fa-check-circle-o");
+          Icon4.classList.add("fa-times-circle-o");
+          return false;
+        }
+      }
+
+      function checkNotOwnerNameMatch (){
+        const ownerName1Value = document.getElementById("owner-first-name").value.toLowerCase();
+        const ownerName2Value = document.getElementById("owner-last-name").value.toLowerCase();
+        const createPasswordValue = createPassword.value.toLowerCase();
+        if (createPasswordValue !== ownerName1Value && createPasswordValue !== ownerName2Value) {
+          notOwnerNameRequirement.style.color = "green";
+          Icon6.classList.remove("fa-times-circle-o");
+          Icon6.classList.add("fa-check-circle-o");
+          return true;
+        } else {
+          notOwnerNameRequirement.style.color = "red";
+          Icon6.classList.remove("fa-check-circle-o");
+          Icon6.classList.add("fa-times-circle-o");
+          return false;
+        }
+      }
+
+      function checkNotPetNameMatch (){
+        const petNameValue = document.getElementById("pet-name").value.toLowerCase();
+        const createPasswordValue = createPassword.value.toLowerCase();
+        if (createPasswordValue !== petNameValue) {
+          notPetNameRequirement.style.color = "green";
+          Icon7.classList.remove("fa-times-circle-o");
+          Icon7.classList.add("fa-check-circle-o");
+          return true;
+        } else {
+          notPetNameRequirement.style.color = "red";
+          Icon7.classList.remove("fa-check-circle-o");
+          Icon7.classList.add("fa-times-circle-o");
+          return false;
+        }
+      }
+
+
+      function checkPasswordValue1 (){
+       checkMinCharactersRequirement();
+       checkSpecialCharacterRequirement();
+       checkUppercaseRequiremement();
+       checkLowercaseRequirement();
+       const initialRequirementsMet = checkMinCharactersRequirement() 
+       && checkSpecialCharacterRequirement()  
+       && checkUppercaseRequiremement()
+       && checkLowercaseRequirement();
+       if (initialRequirementsMet){
+        return true;
+       } else {
+        return false;
+      }
+      }
+
+      function checkPasswordValue2 (){
+        checkNotOwnerNameMatch();
+        checkNotPetNameMatch();
+        checkNumberRequirement();
+        const lastRequirementsMet = checkNotOwnerNameMatch()
+        && checkNotPetNameMatch()
+        && checkNumberRequirement();
+        if (lastRequirementsMet) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      function hideRequirements() {
+        // Delay the removal of children by 1000 milliseconds (1 second)
+        setTimeout(function hideRequirementsTiming () {
+          let requirementsMet = checkPasswordValue1() && checkPasswordValue2();
+          if (requirementsMet) {
+            passwordRequirements.removeChild(specialCharacterRequirement);
+            passwordRequirements.removeChild(minCharactersRequirement);
+            passwordRequirements.removeChild(uppercaseRequirement);
+            passwordRequirements.removeChild(lowercaseRequirement);
+            passwordRequirements.removeChild(numberRequirement);
+            passwordRequirements.removeChild(notOwnerNameRequirement);
+            passwordRequirements.removeChild(notPetNameRequirement);
+          } else {
+            createPasswordRequirements();
+          }
+        }, 1500); // 1000 milliseconds (1 second)
+      }
+      
+
+      function passwordRequirementsUpdate (){
+        createPasswordRequirements();
+        checkPasswordValue1();
+        checkPasswordValue2();
+        hideRequirements();
       }
 
     //Call functions
-     createPassword.addEventListener('input', createPasswordRequirements) 
+     createPassword.addEventListener('input', passwordRequirementsUpdate) 
+
 //HANDLE SUBMISSION OF REGISTRATION
    //Handle empty fields
       //variables
@@ -316,6 +528,7 @@
       
       //functions
        function validatePasswords (){  //validate passwords
+         let requirementsMet = checkPasswordValue1() && checkPasswordValue2();
          if (createPassword.value.length === 0 || confirmPassword.value.length === 0){
            createPassword.style.borderColor = "red";
            confirmPassword.style.borderColor = "red";
@@ -326,6 +539,10 @@
            confirmPassword.style.borderColor = "red";
            passwordAlert.textContent = "The passwords don't match. Please, make sure you write the same password on both fields."; //prepare alert
           return false; //block form submission
+         } else if (!requirementsMet) {
+          createPassword.style.borderColor = "red";
+          passwordAlert.textContent = "Password Requirements not met."
+          return false;
          } else {
            createPassword.style.borderColor = "";
            confirmPassword.style.borderColor = "";

@@ -328,3 +328,14 @@ button {
   margin-top: 2%;
 }
 
+.row-reverse{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin-right: 5px;
+}
+
+.grid-column{
+  display: grid;
+  grid-template-columns: auto auto;
+}

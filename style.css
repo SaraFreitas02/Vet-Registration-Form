@@ -24,7 +24,7 @@
          border: none;
       } 
       
-    /*placement: preparation -> dropdown function*/  
+    /*placement preparation -> dropdown function*/  
       .dropdown {
          position: relative;
          display: inline-block;
@@ -86,8 +86,8 @@
        margin-top: 2%;
     }
 
-    field{
-  /*customization: field*/  
+  /*customization: fieldset*/
+    fieldset{ 
        border: none;
        border-radius: 20px;
        min-width: 382px;

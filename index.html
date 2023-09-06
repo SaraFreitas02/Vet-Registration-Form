@@ -6,8 +6,7 @@
   <!--Meta Tags-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description"
-    content="Vet Registration Form - Simplifying client registration for veterinary clinics. Open-source project under the MIT License.">
+  <meta name="description" content="Vet Registration Form - Simplifying client registration for veterinary clinics. Open-source project under the MIT License.">
   <meta name="author" content="Sara Freitas">
 
   <!--Link Tags-->
@@ -17,7 +16,7 @@
 
   <!--Title-->
   <title>Vet Clinic - Registration</title>
-
+  
 </head>
 
 <body>
@@ -59,15 +58,11 @@
 
       <!-- Owner Info -->
       <fieldset>
-        <legend class="container1-form just-cont-center">
-          <h2>Owner Info</h2>
-        </legend>
+        <legend class="container1-form just-cont-center"><h2>Owner Info</h2></legend>
         <div class="container2-form">
           <div class="container1-form">
-            <input name="ownerFirstName" id="owner-first-name" class="flex-basis" autocomplete="given-name"
-              placeholder="First Name">
-            <input name="ownerLastName" id="owner-last-name" class="flex-basis" autocomplete="family-name"
-              placeholder="Last Name">
+            <input name="ownerFirstName" id="owner-first-name" class="flex-basis" autocomplete="given-name" placeholder="First Name">
+            <input name="ownerLastName" id="owner-last-name" class="flex-basis" autocomplete="family-name" placeholder="Last Name">
           </div>
           <div class="container1-form">
             <input name="street" id="owner-street" class="flex-grow" autocomplete="off" placeholder="Street">
@@ -79,17 +74,14 @@
           </div>
           <div class="container1-form">
             <input name="phone" id="owner-phone-num" autocomplete="off" placeholder="Phone Number">
-            <input name="email" id="owner-email" class="flex-grow" type="email" autocomplete="email"
-              placeholder="Email">
+            <input name="email" id="owner-email" class="flex-grow" type="email" autocomplete="email" placeholder="Email">
           </div>
         </div>
       </fieldset>
 
       <!-- Pet Info -->
       <fieldset>
-        <legend>
-          <h2>Pet Info</h2>
-        </legend>
+        <legend><h2>Pet Info</h2></legend>
 
         <div id="create-add-pet">
           <div class="container1-form just-cont-flex-start">
@@ -154,25 +146,23 @@
               <textarea class="margin-bottom2" name="obs" id="observations"
                 placeholder="Any information you may consider important."></textarea>
             </div>
-            <p id="pet-selector-alert" class="alert-messages"></p>
+           <p id="pet-selector-alert" class="alert-messages"></p>
           </div>
         </div>
 
-        <!-- Button Add Pets -->
-        <div id="parent-add-pet">
-          <button type="button" onclick="createMorePets()" class="margin-bottom2" id="add-pet"><i class="fa fa-plus"
-              aria-hidden="true"></i> Add a
-            Pet</button>
-        </div>
-
+          <!-- Button Add Pets -->
+          <div id="parent-add-pet">
+            <button type="button" onclick="createMorePets()" class="margin-bottom2" id="add-pet"><i class="fa fa-plus"
+                aria-hidden="true"></i> Add a
+              Pet</button>
+          </div>
+        
 
       </fieldset>
 
       <!-- Account Login -->
       <fieldset>
-        <legend class="container1-form just-cont-center">
-          <h2>Account Login</h2>
-        </legend>
+        <legend class="container1-form just-cont-center"><h2>Account Login</h2></legend>
         <div class="container1-form">
           <input name="createPassword" id="create-password" class="flex-basis" type="password"
             placeholder="Create a Password">
@@ -185,9 +175,9 @@
       </fieldset>
 
       <!-- Submit Button-->
-      <div class="container1-form">
+       <div class="container1-form">
         <button type="submit" class="margin-top2" id="submit-reg">Submit Registration</button>
-      </div>
+       </div> 
     </form>
   </main>
 

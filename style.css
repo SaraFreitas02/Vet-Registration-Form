@@ -1,342 +1,347 @@
-/*header*/
-.header {
+/*HEADER*/
   /*placement: vet name + dropdown button*/
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+   .header {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
 
-#vet-clinic {
   /*customization: vet name*/
-  text-decoration: none;
-  color: rgb(19, 66, 19);
-  font-family: Roboto, sans-serif;
-  font-size: 20px;
-}
-
-/*dropdown-menu button*/
-#dropdown-button {
-  /*customization: dropdown-menu button*/
-  background-color: transparent;
-  border-radius: 20%;
-  padding: 16px;
-  font-size: 25px;
-  border: none;
-}
-
-.dropdown {
-  /*placement: preparation -> dropdown function*/
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-content {
-  /*placement + customization: dropdown content*/
-  display: none;
-  position: absolute;
-  right: 0;
-  background-color: #f1f1f1;
-  min-width: 30%;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 20px;
-}
-
-.dropdown-content a {
-  /*customization: navigation links*/
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-/* header buttons */
-.header-links {
-  /*placement + customization: header links container*/
-  display: flex;
-  justify-content: space-between;
-  background-color: lightgray;
-  border-radius: 20px;
-}
-
-.header-links a {
-  /*customization: header links*/
-  color: black;
-  text-decoration: none;
-  font-family: Roboto, sans-serif;
-  font-size: 16px;
-  text-align: center;
-  width: 25%;
-  padding: 1%;
-}
-
-
-/*main*/
-/*Customization*/
-main{
-  background-image: url(https://images.unsplash.com/photo-1518882174711-1de40238921b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-form {
-  /*customization: form field*/
-  width: 40%;
-  margin-top: 2%;
-}
-
-fieldset {
-  /*customization: fieldsets*/
-  border: none;
-  border-radius: 20px;
-  min-width: 382px;
-  background-color: rgba(255, 255, 255, 0.781);
-}
-
-legend {
-  /*customization: legends*/
-  text-align: center;
-  padding-top: 8%;
-  font-family: Roboto, sans-serif;
-  color: rgb(19, 66, 19);
-}
-
-form button {
-  /*customization: form buttons*/
-  border-radius: 20px;
-}
-
-input {
-  /*customization:inputs*/
-  color: rgb(19, 66, 19);
-  font-family: Roboto, sans-serif;
-}
-
-label, form p{
-  /*customization: labels and form p*/
-  font-family: Roboto, sans-serif;
-  font-size: 13px;
-}
-
-form button{
-  border: solid 1px;
-  border-color: rgb(19, 66, 19);;
-  background-color: white;
-  font-weight: bold;
-}
-
-/*Form Flexbox*/
-.container1-form {
-  /*container: row space-around*/
-  display: flex;
-  justify-content: space-around;
-}
-
-.container2-form {
-  /*container: column flex-start*/
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.alert-messages {
-  color: red;
-}
-
-
-/*footer*/
-footer {
-  /*placement + customization: footer*/
-  position: relative;
-  background-color: lightgray;
-  bottom: 0%;
-  width: 100%;
-  min-width: 100%;
-  max-width: 100%;
-}
-
-footer a {
-  /*customization: footer links*/
-  color: black;
-  text-decoration: none;
-  width: 100%;
-  border-radius: 20px;
-  font-size: 15px;
-}
-
-footer p {
-  /*customization: footer paragraphs*/
-  font-weight: bold;
-  font-size: 17px;
-  font-family: Roboto, sans-serif;
+   #vet-clinic {
+     text-decoration: none;
+     color: rgb(19, 66, 19);
+     font-family: Roboto, sans-serif;
+     font-size: 20px;
+   }
   
-}
+  /*dropdown-menu button*/
+    /*customization: dropdown-menu button*/
+      #dropdown-button {
+         background-color: transparent;
+         border-radius: 20%;
+         padding: 16px;
+         font-size: 25px;
+         border: none;
+      } 
+      
+    /*placement: preparation -> dropdown function*/  
+      .dropdown {
+         position: relative;
+         display: inline-block;
+      }
+    
+    /*placement + customization: dropdown content*/  
+     .dropdown-content {
+         display: none;
+         position: absolute;
+         right: 0;
+         background-color: #f1f1f1;
+         min-width: 30%;
+         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+         z-index: 1;
+         border-radius: 20px;
+      }
+    
+    /*customization: navigation links*/
+      .dropdown-content a {
+         color: black;
+         padding: 12px 16px;
+         text-decoration: none;
+         display: block;
+      }
 
-.container-icons-footer a {
-  /*customization: footer icons*/
-  font-size: 25px;
-  margin: 5px;
-}
-
-/*Footer Flexbox*/
-.container2-footer {
-  /*container: column just.content->space-around*/
-  display: flex;
-  justify-content: space-around;
-}
-
-.container-links-footer {
-  /*container: column*/
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  width: 33%;
-}
-
-.container-icons-footer {
-  display: flex;
-  justify-content: center;
-  margin-top: 5%;
-}
-
-
-/*hover*/
-.header-links a:hover {
-  /*hover customization: header links*/
-  color: white;
-  background-color: rgb(19, 66, 19);
-  border-radius: 20px;
-  font-size: 17px;
-}
-
-.dropdown-content a:hover {
-  /* hover customization: navigation links*/
-  background-color: rgb(19, 66, 19);
-  border-radius: 20px;
-  color: white;
-  font-size: 18px;
-}
-
-.dropdown:hover .dropdown-content {
-  /*hover customization: dropdown function activation*/
-  display: block;
-  cursor: pointer;
-}
-
-.dropdown:hover #dropdown-button {
-  /*hover customization: dropdown*/
-  scale: 1.2;
-  cursor: pointer;
-}
-
-input[type="radio"]:hover {
-  /*hover customization: radio buttons*/
-  cursor: pointer;
-}
-
-input[type="date"]:hover {
-  /*hover customization: date inputs*/
-  cursor: text;
-}
-
-select:hover {
-  /*hover customization: select*/
-  cursor: pointer;
-}
-
-form button:hover {
-  cursor: pointer;
-}
-
-.container-links-footer a:hover {
-  /*hover customization: footer links*/
-  color: white;
-  background-color: rgb(19, 66, 19);
-  font-size: 17px;
-}
-
-.icon-footer:hover {
-  /*hover customization: footer icons*/
-  font-weight: bold;
-  color: rgb(19, 66, 19);
-}
+    /* header buttons */
+      /*placement + customization: header links container*/
+        .header-links {
+           display: flex;
+           justify-content: space-between;
+           background-color: lightgray;
+           border-radius: 20px;
+        }
+     
+      /*customization: header links*/         
+        .header-links a { 
+           color: black;
+           text-decoration: none;
+           font-family: Roboto, sans-serif;
+           font-size: 16px;
+           text-align: center;
+           width: 25%;
+           padding: 1%;
+        }
 
 
-/*adjustments*/
-/*specific*/
-#number {
-  /*adjustments: house number input*/
-  width: 10%;
-}
+/*MAIN*/
+  /* customization: main background image*/
+    main{
+       background-image: url(https://images.unsplash.com/photo-1518882174711-1de40238921b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1926&q=80);
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
+    }
+    
+  /*customization: form field*/
+    form {  
+       width: 40%;
+       margin-top: 2%;
+    }
 
-#zip-code {
-  /*adjustments: zipcode input*/
-  width: 35%;
-}
+    field{
+  /*customization: field*/  
+       border: none;
+       border-radius: 20px;
+       min-width: 382px;
+       background-color: rgba(255, 255, 255, 0.781);
+    }
 
-#phone-number {
-  /*adjustments: phone number input*/
-  width: 30%;
-}
+  /*customization: legends*/   
+    legend {
+       text-align: center;
+       padding-top: 8%;
+       font-family: Roboto, sans-serif;
+       color: rgb(19, 66, 19);
+    }
+  
+  /*customization: form buttons*/  
+    form button {
+       border-radius: 20px;
+    }
 
-#checkboxes {
-  /*adjustments: radio buttons*/
-  width: 20%;
-}
+  /*customization:inputs*/  
+    input {
+       color: rgb(19, 66, 19);
+       font-family: Roboto, sans-serif;
+    }
 
-button {
-  /*adjustments: buttons*/
-  color: rgb(19, 66, 19);
-}
+  /*customization: labels and form p*/  
+    label, form p{
+     font-family: Roboto, sans-serif;
+     font-size: 13px;
+    }
+  
+  /*customization: form buttons*/
+    form button{
+       border: solid 1px;
+       border-color: rgb(19, 66, 19);;
+       background-color: white;
+       font-weight: bold;
+    }
+  /*customization: alert messages*/
+    .alert-messages {
+       color: red;
+    }
 
-#submit-reg {
-  margin-bottom: 10%;
-  max-width: 258px;
-  min-width: 258px;
-}
+  /*form - flexbox*/
+    /*row space-around*/
+      .container1-form {
+         display: flex;
+         justify-content: space-around;
+      }
+    
+    /*column flex-start*/
+      .container2-form {
+         display: flex;
+         flex-direction: column;
+         justify-content: flex-start;
+      }
 
-/*non-specific*/
-.align-items {
-  /*set: align items center*/
-  align-items: center;
-}
 
-.just-cont-flex-start {
-  /*set: justify content flex start*/
-  justify-content: flex-start;
-}
+/*FOOTER*/
+  /*placement + customization: footer*/
+    footer {
+       position: relative;
+       background-color: lightgray;
+       bottom: 0%;
+       width: 100%;
+       min-width: 100%;
+       max-width: 100%;
+    }
 
-.flex-basis {
-  /*set: flex basis half*/
-  flex-basis: 50%;
-}
+  /*customization: footer links*/  
+    footer a {
+       color: black;
+       text-decoration: none;
+       width: 100%;
+       border-radius: 20px;
+       font-size: 15px;
+    }
 
-.flex-grow {
-  /*set: flex grow 1*/
-  flex-grow: 1;
-}
+    /*customization: footer paragraphs*/
+      footer p {
+         font-weight: bold;
+         font-size: 17px;
+         font-family: Roboto, sans-serif;
+      }
 
-.margin-bottom2 {
-  /*set margin bottom to 2%*/
-  margin-bottom: 2%;
-}
+    /*customization: footer icons*/
+      .container-icons-footer a {
+         font-size: 25px;
+         margin: 5px;
+      }
 
-.margin-top2 {
-  /*set margin top to 2%*/
-  margin-top: 2%;
-}
+   /*footer flexbox*/
+    /*column just.cont. -> space-around*/
+      .container2-footer {
+         display: flex;
+         justify-content: space-around;
+      }
 
-.row-reverse{
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  margin-right: 5px;
-}
+    /*column*/  
+      .container-links-footer { 
+         display: flex;
+         flex-direction: column;
+         text-align: center;
+         width: 33%;
+      }
 
-.grid-column{
-  display: grid;
-  grid-template-columns: auto auto;
-}
+    /*row just.cont. -> center*/  
+      .container-icons-footer {
+         display: flex;
+         justify-content: center;
+         margin-top: 5%;
+      }
+
+
+/*ELEMENTS HOVER*/
+  /*header links*/
+    .header-links a:hover {
+       color: white;
+       background-color: rgb(19, 66, 19);
+       border-radius: 20px;
+       font-size: 17px;
+    }
+
+  /*navigation links*/  
+    .dropdown-content a:hover {
+       background-color: rgb(19, 66, 19);
+       border-radius: 20px;
+       color: white;
+       font-size: 18px;
+    }
+   
+  /*dropdown function activation*/  
+    .dropdown:hover .dropdown-content {
+       display: block;
+       cursor: pointer;
+    }
+ 
+  /*dropdown*/
+    .dropdown:hover #dropdown-button {
+       scale: 1.2;
+       cursor: pointer;
+    }
+
+  /*radio buttons*/  
+    input[type="radio"]:hover {
+       cursor: pointer;
+    }
+  
+  /*date inputs*/  
+    input[type="date"]:hover {
+       cursor: text;
+    }
+
+  /*select*/  
+    select:hover {
+       cursor: pointer;
+    }
+  
+  /*form buttons*/  
+    form button:hover {
+       cursor: pointer;
+    }
+
+  /*footer links*/
+    .container-links-footer a:hover {
+       color: white;
+       background-color: rgb(19, 66, 19);
+       font-size: 17px;
+    }
+  
+  /*footer icons*/  
+    .icon-footer:hover {
+       font-weight: bold;
+       color: rgb(19, 66, 19);
+    }
+
+
+/*ADJUSTMENTS*/
+  /*specific*/
+    /*house number input*/
+      #number {
+         width: 10%;
+      }
+    
+    /*zipcode input*/  
+      #zip-code {
+         width: 35%;
+      }
+  
+    /*phone number input*/    
+      #phone-number {
+         width: 30%;
+      }
+    
+    /*radio buttons*/  
+      #checkboxes {
+         width: 20%;
+      }
+
+    /*buttons*/ 
+      button {
+         color: rgb(19, 66, 19);
+      }
+    
+    /*submit button*/  
+      #submit-reg {
+         margin-bottom: 10%;
+         max-width: 258px;
+         min-width: 258px;
+      }
+
+ /*non-specific*/
+  /*align items center*/
+    .align-items {
+       align-items: center;
+    }
+
+  /*justify content flex start*/
+    .just-cont-flex-start {
+       justify-content: flex-start;
+    }
+
+  /*flex basis half*/
+    .flex-basis {
+       flex-basis: 50%;
+    }
+
+  /*flex grow 1*/
+    .flex-grow {
+       flex-grow: 1;
+    }
+
+  /*margin bottom to 2%*/
+    .margin-bottom2 {
+       margin-bottom: 2%;
+    } 
+
+  /*margin top to 2%*/
+    .margin-top2 {
+       margin-top: 2%;
+    }
+
+  /*row-reverse*/  
+    .row-reverse{
+       display: flex;
+       flex-direction: row-reverse;
+       justify-content: flex-end;
+       margin-right: 5px;
+    }
+  
+  /*grid-column*/  
+    .grid-column{
+       display: grid;
+       grid-template-columns: auto auto;
+    }
 
 /* Check attributions folder for more info regarding attributions and copyright licenses */

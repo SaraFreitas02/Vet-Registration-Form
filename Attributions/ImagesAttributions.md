@@ -1,2 +1,0 @@
-# Backgound Image
-[Photo](https://unsplash.com/photos/5gXPapBz40c) by [David Taffet](https://unsplash.com/@invisibleman_photography) on [Unsplash](https://unsplash.com/), generously provided under the [Unsplash License](https://unsplash.com/license).

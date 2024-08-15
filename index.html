@@ -57,7 +57,7 @@
   </header>
 
   <!-- Main -->
-  <main>
+  <main class="flex column justify-center">
 
     <!--Form-->
     <form class="flex column justify-center align-center">
@@ -86,42 +86,38 @@
       <!--Pet-->
       <fieldset id="pet-form" class="flex column justify-center align-start">
         <legend for="pet-form">Pet Information</legend>
-        <div class="flex column justify-center align-stretch">
-          <input type="text" placeholder="Pet Name" aria-label="pet name">
-        </div>
-        <div class="flex row justify-around align-center">
-          <input type="text" placeholder="Animal" aria-label="animal" class="width-half straight-right">
-          <input type="text" placeholder="Breed" aria-label="breed" class="width-half straight-left">
-        </div>
-        <p>Does your pet already have a chip?</p>
-        <div class="flex row justify-around align-center">
-          <div class="flex row justify-center align-center">
-            <label for="yes-radio">Yes</label>
-            <input id="yes-radio" type="radio" class="radio-btn">
+        <div class="group flex column justify-center align-stretch">
+          <div class="flex column justify-center align-stretch">
+            <input type="text" placeholder="Pet Name" aria-label="pet name">
           </div>
-          <div class="flex row justify-center align-center">
-            <label for="no-radio">No</label>
-            <input id="no-radio" type="radio" class="radio-btn">
+          <div class="flex row justify-around align-center">
+            <input type="text" placeholder="Animal" aria-label="animal" class="width-half straight-right">
+            <input type="text" placeholder="Breed" aria-label="breed" class="width-half straight-left">
           </div>
         </div>
-        <div class="flex column justify-center align-stretch">
-          <input id="chipnumber-input" type="text" placeholder="Chipnumber" aria-label="chipnumber">
-        </div>
-        <p>Does your pet have any known health concern or diseases?</p>
-        <div class="flex row justify-around align-center">
+
+        <div class="group flex column justify-center align-center">
+          <p>Does your pet already have a chip?</p>
           <div class="flex row justify-center align-center">
-            <label for="yes-radio2">Yes</label>
-            <input id="yes-radio2" type="radio" class="radio-btn">
+            <button class="answer-btns width-quarter" type="button">Yes</button>
+            <button class="answer-btns width-quarter" type="button">No</button>
           </div>
-          <div class="flex row justify-center align-center">
-            <label for="no-radio2">No</label>
-            <input id="no-radio2" type="radio" class="radio-btn">
+          <div class="flex column justify-center align-stretch">
+            <input id="chipnumber-input" type="text" placeholder="Chipnumber" aria-label="chipnumber">
           </div>
         </div>
-        <div class="flex column justify-center align-stretch">
-          <textarea id="textarea" placeholder="Health Concerns or Diseases"
-            aria-label="health concerns or diseases"></textarea>
+        <div class="group flex column justify-center align-center">
+          <p>Does your pet have any known health concern or diseases?</p>
+          <div class="flex row justify-center align-center">
+            <button class="answer-btns width-quarter" type="button">Yes</button>
+            <button class="answer-btns width-quarter" type="button">No</button>
+          </div>
+          <div class="flex column justify-center align-stretch">
+            <textarea id="textarea" placeholder="Health Concerns or Diseases"
+              aria-label="health concerns or diseases"></textarea>
+          </div>
         </div>
+
       </fieldset>
 
       <!--Account-->
@@ -136,14 +132,14 @@
 
   <!-- Footer -->
   <footer class="flex column justify-center align-stretch">
-    <div class="flex row justify-around align-center">
+    <div class="flex row justify-even align-center">
 
       <!--Footer: Appointments-->
       <nav class="flex column justify-center align-center">
         <p>Appointments</p>
         <a href="underConstruction.html">FAQ</a>
         <a href="underConstruction.html">Opening Hours</a>
-        <a href="underConstruction.html">Make an Appointment</a>
+        <a href="underConstruction.html">Make Appointment</a>
       </nav>
 
       <!--Footer: About us-->
@@ -158,14 +154,14 @@
       <nav class="flex column justify-center align-center">
         <p>Other</p>
         <a href="underConstruction.html">Work for Us</a>
+        <a href="underConstruction.html">Privacy Settings</a>
         <a href="underConstruction.html">Terms and Conditons</a>
-        <a href="underConstruction.html">Privacy Settings and Cookies</a>
       </nav>
     </div>
 
     <!-- Social Media -->
-    <div class="flex row justify-center align-center">
-      <nav>
+    <div class="flex row justify-center align-center width-max top-fifteen">
+      <nav id="social-media" class="flex row justify-center align- width-max">
         <a aria-label="Instagram" href="https://www.instagram.com/"> <i class="fa-brands fa-instagram icon-footer"
             aria-hidden="true"></i></a>
         <a aria-label="Facebook" href="https://www.facebook.com/"> <i class="fa-brands fa-facebook icon-footer"

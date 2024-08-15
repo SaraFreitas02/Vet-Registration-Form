@@ -6,7 +6,8 @@
   <!--Meta Tags-->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Vet Registration Form - Simplifying client registration for veterinary clinics. Open-source project under the MIT License.">
+  <meta name="description"
+    content="Vet Registration Form - Simplifying client registration for veterinary clinics. Open-source project under the MIT License.">
   <meta name="author" content="Sara Freitas">
 
   <!--Link Tags-->
@@ -16,213 +17,163 @@
 
   <!--Title-->
   <title>Vet Clinic - Registration</title>
-  
+
 </head>
 
 <body>
 
   <!-- Header-->
-  <header>
-    <div class="header">
-      <a id="vet-clinic" href="underConstruction.html">
-        <h1><i class="fa-solid fa-shield-dog" aria-hidden="true"></i> Vet Clinic</h1>
+  <header class="flex column justify-center align-stretch">
+    <div class="flex row justify-between align-center">
+      <a href="underConstruction.html">
+        <div id="brand" class="flex row justify-around align-center">
+          <i class="fa-solid fa-shield-dog" aria-hidden="true"></i>
+          <h1>Local Vet Clinic</h1>
+        </div>
       </a>
 
       <!-- Dropdown Menu Button -->
-      <div class="dropdown">
-        <button id="dropdown-button" aria-label="Navigation Menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
-        <nav class="dropdown-content">
-          <a class="our-team-menu" href="underConstruction.html">Our Team</a>
-          <a class="pet-care-menu" href="underConstruction.html">Pet Care</a>
-          <a class="contact-menu" href="underConstruction.html">Contact</a>
-          <a class="appointments-menu" href="underConstruction.html">Appointments</a>
-          <a class="registration-menu" href="index.html">Registration</a>
-          <a class="my-pets-menu" href="underConstruction.html">My Pets</a>
+      <div id="dropdown-menu" class="flex row justify-around align-center">
+        <button id="dropdown-btn" type="menu" aria-label="menu"><i class="fa fa-bars" aria-hidden="true"></i></button>
+        <nav class="flex column justify-center align-center">
+          <a href="underConstruction.html">Our Team</a>
+          <a href="underConstruction.html">Pet Care</a>
+          <a href="underConstruction.html">Contact</a>
+          <a href="underConstruction.html">Appointments</a>
+          <a href="index.html">Registration</a>
+          <a href="underConstruction.html">My Pets</a>
         </nav>
       </div>
     </div>
 
-    <!--Header Links-->
-    <nav class="header-links">
-      <a class="our-team-menu" href="underConstruction.html">Our Team</a>
-      <a class="pet-care-menu" href="underConstruction.html">Pet Care</a>
-      <a class="contact-menu" href="underConstruction.html">Contact</a>
-      <a class="my-pets-menu" href="underConstruction.html">My Pets</a>
+    <!--Header Links (only tablet + desktop)-->
+    <nav id="header-links" class="flex row justify-even align-center">
+      <a href="underConstruction.html">Our Team</a>
+      <a href="underConstruction.html">Pet Care</a>
+      <a href="underConstruction.html">Contact</a>
+      <a href="underConstruction.html">My Pets</a>
     </nav>
 
   </header>
 
   <!-- Main -->
-  <main class="container2-form align-items">
-    <form id="form" class="container2-form">
+  <main>
 
-      <!-- Owner Info -->
-      <fieldset>
-        <legend class="container1-form just-cont-center"><h2>Owner Info</h2></legend>
-        <div class="container2-form">
-          <div class="container1-form">
-            <input name="ownerFirstName" id="owner-first-name" class="flex-basis" autocomplete="given-name" placeholder="First Name">
-            <input name="ownerLastName" id="owner-last-name" class="flex-basis" autocomplete="family-name" placeholder="Last Name">
-          </div>
-          <div class="container1-form">
-            <input name="street" id="owner-street" class="flex-grow" autocomplete="off" placeholder="Street">
-            <input name="houseNum" id="owner-house-num" autocomplete="off" placeholder="Num">
-          </div>
-          <div class="container1-form">
-            <input name="zipCode" id="owner-zip-code" autocomplete="off" placeholder="Zip Code">
-            <input name="city" id="owner-city" class="flex-grow" autocomplete="off" placeholder="City">
-          </div>
-          <div class="container1-form">
-            <input name="phone" id="owner-phone-num" autocomplete="off" placeholder="Phone Number">
-            <input name="email" id="owner-email" class="flex-grow" type="email" autocomplete="email" placeholder="Email">
-          </div>
+    <!--Form-->
+    <form class="flex column justify-center align-center">
+
+      <!--Owner-->
+      <fieldset id="owner-form" class="flex column justify-center align-start">
+        <legend for="owner-form">Owner Information</legend>
+        <div class="flex row justify-around align-center">
+          <input type="text" placeholder="First Name" aria-label="first name" class="width-half straight-right">
+          <input type="text" placeholder="Last Name" aria-label="last name" class="width-half straight-left">
+        </div>
+        <div class="flex row justify-around align-center">
+          <input type="text" placeholder="Street Name" aria-label="street name" class="grow straight-right">
+          <input type="number" placeholder="No." aria-label="house number" class="width-quarter straight-left">
+        </div>
+        <div class="flex row justify-around align-center">
+          <input type="text" placeholder="Post Code" aria-label="post code" class="width-half straight-right">
+          <input type="text" placeholder="Location" aria-label="location" class="width-half straight-left">
+        </div>
+        <div class="flex column justify-center align-stretch">
+          <input type="tel" placeholder="Phone Number" aria-label="phone number">
+          <input type="email" placeholder="Email" aria-label="email">
         </div>
       </fieldset>
 
-      <!-- Pet Info -->
-      <fieldset>
-        <legend><h2>Pet Info</h2></legend>
-
-        <div id="create-add-pet">
-          <div class="container1-form just-cont-flex-start">
-            <p id="display-pet-name"></p>
+      <!--Pet-->
+      <fieldset id="pet-form" class="flex column justify-center align-start">
+        <legend for="pet-form">Pet Information</legend>
+        <div class="flex column justify-center align-stretch">
+          <input type="text" placeholder="Pet Name" aria-label="pet name">
+        </div>
+        <div class="flex row justify-around align-center">
+          <input type="text" placeholder="Animal" aria-label="animal" class="width-half straight-right">
+          <input type="text" placeholder="Breed" aria-label="breed" class="width-half straight-left">
+        </div>
+        <p>Does your pet already have a chip?</p>
+        <div class="flex row justify-around align-center">
+          <div class="flex row justify-center align-center">
+            <label for="yes-radio">Yes</label>
+            <input id="yes-radio" type="radio" class="radio-btn">
           </div>
-          <div class="container2-form">
-            <div class="container1-form">
-
-              <!-- Other Pet Info -->
-              <div class="container2-form flex-basis margin-top2">
-                <input class="margin-bottom2" name="petName" id="pet-name" placeholder="Name">
-                <label for="pet-date-of-birth">Date Of Birth</label>
-                <input name="dateOfBirth" id="pet-date-of-birth" type="date">
-              </div>
-
-              <!-- Type of Pet-->
-              <div class="container2-form flex-basis margin-top2">
-                <select id="pet-list">
-                  <option disabled selected value="pt">Pet</option>
-                  <option value="dg">Dog</option>
-                  <option value="ct">Cat</option>
-                  <option value="ham">Hamster</option>
-                  <option value="bd">Bird</option>
-                  <option value="otr">Other</option>
-                </select>
-
-                <!-- Javascript Inputs 1 -->
-                <div id="div-which-pet" class="container2-form"></div>
-                <div id="div-breed-specie" class="container2-form"></div>
-              </div>
-            </div>
-
-            <!-- Chipnumber -->
-            <div class="container2-form">
-              <div class="container1-form">
-                <p class="flex-grow">Does it have a chipnumber?</p>
-                <div id="checkboxes" class="container1-form align-items">
-                  <div class="container1-form flex-basis">
-                    <label for="yes-checkbox">Yes</label>
-                    <input id="yes-checkbox" name="Checkbox" type="radio">
-                  </div>
-                  <div class="container1-form flex-basis">
-                    <label for="no-checkbox">No</label>
-                    <input id="no-checkbox" name="Checkbox" type="radio">
-                  </div>
-                </div>
-              </div>
-
-              <!-- Javascript Inputs 2 -->
-              <div id="chipnumber-div" class="container2-form margin-bottom2"></div>
-            </div>
-            <p id="radio-buttons-alert" class="alert-messages"></p>
-
-            <!-- Medical History/Obs -->
-            <div class="container2-form">
-              <label id="med-history" for="medical-history">Medical History</label>
-              <textarea class="margin-bottom2" name="medicalHistory" id="medical-history"
-                placeholder="Any known diseases, health problems or concerns."></textarea>
-            </div>
-            <div class="container2-form">
-              <label id="obs" for="observations">Observations</label>
-              <textarea class="margin-bottom2" name="obs" id="observations"
-                placeholder="Any information you may consider important."></textarea>
-            </div>
-           <p id="pet-selector-alert" class="alert-messages"></p>
+          <div class="flex row justify-center align-center">
+            <label for="no-radio">No</label>
+            <input id="no-radio" type="radio" class="radio-btn">
           </div>
         </div>
-
-          <!-- Button Add Pets -->
-          <div id="parent-add-pet">
-            <button type="button" onclick="createMorePets()" class="margin-bottom2" id="add-pet"><i class="fa fa-plus"
-                aria-hidden="true"></i> Add a
-              Pet</button>
-          </div>
-        
-
-      </fieldset>
-
-      <!-- Account Login -->
-      <fieldset>
-        <legend class="container1-form just-cont-center"><h2>Account Login</h2></legend>
-        <div class="container1-form">
-          <input name="createPassword" id="create-password" class="flex-basis" type="password"
-            placeholder="Create a Password">
-          <input name="confirmPassword" id="confirm-password" class="flex-basis" type="password"
-            placeholder="Confirm Password">
+        <div class="flex column justify-center align-stretch">
+          <input id="chipnumber-input" type="text" placeholder="Chipnumber" aria-label="chipnumber">
         </div>
-        <div id="password-requirements" class="grid-column"></div>
-        <p id="info-filled-alert" class="alert-messages"></p>
-        <p id="password-alert" class="alert-messages"></p>
+        <p>Does your pet have any known health concern or diseases?</p>
+        <div class="flex row justify-around align-center">
+          <div class="flex row justify-center align-center">
+            <label for="yes-radio2">Yes</label>
+            <input id="yes-radio2" type="radio" class="radio-btn">
+          </div>
+          <div class="flex row justify-center align-center">
+            <label for="no-radio2">No</label>
+            <input id="no-radio2" type="radio" class="radio-btn">
+          </div>
+        </div>
+        <div class="flex column justify-center align-stretch">
+          <textarea id="textarea" placeholder="Health Concerns or Diseases"
+            aria-label="health concerns or diseases"></textarea>
+        </div>
       </fieldset>
 
-      <!-- Submit Button-->
-       <div class="container1-form">
-        <button type="submit" class="margin-top2" id="submit-reg">Submit Registration</button>
-       </div> 
+      <!--Account-->
+      <fieldset id="password-form" class="flex column justify-center align-start">
+        <legend for="password-form">Create Password</legend>
+        <input type="password" placeholder="Create Password" aria-label="create password" class="width-max">
+        <input type="password" placeholder="Repeat Password" aria-label="repeat password" class="width-max">
+      </fieldset>
+      <button type="button">Next</button>
     </form>
   </main>
 
   <!-- Footer -->
-  <footer>
-    <nav>
-      <div class="container2-footer">
+  <footer class="flex column justify-center align-stretch">
+    <div class="flex row justify-around align-center">
 
-        <!--Footer: Appointments-->
-        <div class="container-links-footer">
-          <p>Appointments</p>
-          <a href="underConstruction.html">FAQ</a>
-          <a href="underConstruction.html">Opening Hours</a>
-          <a href="underConstruction.html">Make an Appointment</a>
-        </div>
+      <!--Footer: Appointments-->
+      <nav class="flex column justify-center align-center">
+        <p>Appointments</p>
+        <a href="underConstruction.html">FAQ</a>
+        <a href="underConstruction.html">Opening Hours</a>
+        <a href="underConstruction.html">Make an Appointment</a>
+      </nav>
 
-        <!--Footer: About us-->
-        <div class="container-links-footer">
-          <p>About us</p>
-          <a href="underConstruction.html">Our Team</a>
-          <a href="underConstruction.html">Contact</a>
-          <a href="underConstruction.html">News</a>
-        </div>
+      <!--Footer: About us-->
+      <nav class="flex column justify-center align-center">
+        <p>About us</p>
+        <a href="underConstruction.html">Our Team</a>
+        <a href="underConstruction.html">Contact</a>
+        <a href="underConstruction.html">News</a>
+      </nav>
 
-        <!--Footer: Other-->
-        <div class="container-links-footer">
-          <p>Other</p>
-          <a href="underConstruction.html">Work for Us</a>
-          <a href="underConstruction.html">Terms and Conditons</a>
-          <a href="underConstruction.html">Privacy Settings and Cookies</a>
-        </div>
-      </div>
+      <!--Footer: Other-->
+      <nav class="flex column justify-center align-center">
+        <p>Other</p>
+        <a href="underConstruction.html">Work for Us</a>
+        <a href="underConstruction.html">Terms and Conditons</a>
+        <a href="underConstruction.html">Privacy Settings and Cookies</a>
+      </nav>
+    </div>
 
-      <!-- Social Media -->
-      <div class="container-icons-footer">
-        <div>
-          <a aria-label="Instagram" href="https://www.instagram.com/"> <i class="fa-brands fa-instagram icon-footer"
-              aria-hidden="true"></i></a>
-          <a aria-label="Facebook" href="https://www.facebook.com/"> <i class="fa-brands fa-facebook icon-footer"
-              aria-hidden="true"></i></a>
-          <a aria-label="Twitter" href="https://twitter.com/"> <i class="fa-brands fa-x-twitter icon-footer"
-              aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </nav>
+    <!-- Social Media -->
+    <div class="flex row justify-center align-center">
+      <nav>
+        <a aria-label="Instagram" href="https://www.instagram.com/"> <i class="fa-brands fa-instagram icon-footer"
+            aria-hidden="true"></i></a>
+        <a aria-label="Facebook" href="https://www.facebook.com/"> <i class="fa-brands fa-facebook icon-footer"
+            aria-hidden="true"></i></a>
+        <a aria-label="Twitter" href="https://twitter.com/"> <i class="fa-brands fa-x-twitter icon-footer"
+            aria-hidden="true"></i></a>
+      </nav>
+    </div>
   </footer>
   <script src="script.js"></script>
 </body>

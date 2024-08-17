@@ -2,9 +2,20 @@ const submit = document.getElementById("submit");
 const ownerInfo = document.getElementById("owner-form");
 const petInfo = document.getElementById("pet-form");
 const passwordInfo = document.getElementById("password-form");
+const ownerInputs = document.querySelectorAll('#owner-form input');
+
+const ownerInputsValid = () => {
+  return Array.from(ownerInputs).every(input => input.checkValidity());
+}
+
+const passwordInputs = document.querySelectorAll('#password-form input');
+
+const passwordInputsValid = () => {
+  return Array.from(passwordInputs).every(input => input.checkValidity());
+}
 
 submit.addEventListener("click", function () {
-  if (!ownerInfo.classList.contains("invisible")) {
+  if (!ownerInfo.classList.contains("invisible") &&ownerInputsValid()) {
     ownerInfo.classList.add("invisible");
     petInfo.classList.remove("invisible");
   } else if (!petInfo.classList.contains("invisible")) {
@@ -17,7 +28,12 @@ submit.addEventListener("click", function () {
   } else {
     submit.textContent = "Next";
   }
+
+  if (submit.textContent === 'Submit' && passwordInputsValid()){
+    alert('Account Created!')
+  }
 });
+
 
 const seePassword = document.querySelectorAll(".see-password");
 const passwordInput = document.querySelectorAll(".input-btn input");
@@ -34,21 +50,3 @@ for (let i = 0; i < seePassword.length; i++) {
     seePassword[i].innerHTML = show ? showIcon : hideIcon;
   });
 }
-
-const passwordRequirements = document.getElementById("password-requirements");
-
-const input = document.getElementById("password");
-
-input.addEventListener("click", function () {
-  passwordRequirements.classList.remove("invisible");
-  passwordRequirements.classList.add("slide-down");
-});
-
-input.addEventListener("blur", function () {
-  passwordRequirements.classList.remove("slide-down");
-  passwordRequirements.classList.add('slide-up');
-  passwordRequirements.classList.add("invisible");
-});
-
-const requirementMet =
-  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="green" d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>';

@@ -103,6 +103,14 @@ input, .input-btn button {
   box-sizing: border-box;
 } 
 
+input:user-valid {
+  border:solid 3px green;
+}
+
+input:user-invalid {
+  border:solid 3px red;
+}
+
 #password-requirements {
   margin-top: 20px;
   margin-bottom: 20px;

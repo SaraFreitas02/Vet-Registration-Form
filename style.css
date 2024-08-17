@@ -66,6 +66,7 @@ legend {
   box-shadow: 5px 5px 5px black;
   width: 65%;
   margin-bottom: 15px;
+  min-width: fit-content;
 }
 
 fieldset div {

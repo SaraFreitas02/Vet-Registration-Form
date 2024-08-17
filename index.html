@@ -12,6 +12,15 @@
 
   <title>Vet Clinic - Registration</title>
 
+  <style>
+    main {
+      background-image: url("background.webp");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+  </style>
+
 </head>
 
 <body>
@@ -117,8 +126,9 @@
         <legend>Password</legend>
         <div class="flex-column justify-center align-center">
           <div class="flex-row justify-center align-center input-btn">
-            <input required name="create-password" id="password" autocomplete="new-password" type="password" placeholder="Create Password"
-              aria-label="create password" class="width-max" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}">
+            <input required name="create-password" id="password" autocomplete="new-password" type="password"
+              placeholder="Create Password" aria-label="create password" class="width-max"
+              pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}">
             <button type="button" aria-label="see passsword"
               class="flex-row justify-center align-center see-password"><svg xmlns="http://www.w3.org/2000/svg"
                 width="16" height="16" aria-hidden="true" viewBox="0 0 576 512">
@@ -128,8 +138,9 @@
           </div>
 
           <div class="flex-row justify-center align-center input-btn">
-            <input required name="repeat-password" autocomplete="new-password" type="password" placeholder="Repeat Password"
-              aria-label="repeat password" class="width-max" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}">
+            <input required name="repeat-password" autocomplete="new-password" type="password"
+              placeholder="Repeat Password" aria-label="repeat password" class="width-max"
+              pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}">
             <button type="button" aria-label="see confirmed passsword"
               class="flex-row justify-center align-center see-password"><svg xmlns="http://www.w3.org/2000/svg"
                 width="16" height="16" aria-hidden="true" viewBox="0 0 576 512">

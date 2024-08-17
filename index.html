@@ -61,7 +61,7 @@
   <main class="flex-column justify-center align-center">
 
     <!--Form-->
-    <form class="flex-column justify-center align-center">
+    <form id="registration" class="flex-column justify-center align-center">
 
       <!--Owner-->
       <fieldset id="owner-form" class="flex-column justify-center align-center">
@@ -117,7 +117,7 @@
         <legend>Password</legend>
         <div class="flex-column justify-center align-center">
           <div class="flex-row justify-center align-center input-btn">
-            <input required id="password" autocomplete="new-password" type="password" placeholder="Create Password"
+            <input required name="create-password" id="password" autocomplete="new-password" type="password" placeholder="Create Password"
               aria-label="create password" class="width-max" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}">
             <button type="button" aria-label="see passsword"
               class="flex-row justify-center align-center see-password"><svg xmlns="http://www.w3.org/2000/svg"
@@ -128,7 +128,7 @@
           </div>
 
           <div class="flex-row justify-center align-center input-btn">
-            <input required autocomplete="new-password" type="password" placeholder="Repeat Password"
+            <input required name="repeat-password" autocomplete="new-password" type="password" placeholder="Repeat Password"
               aria-label="repeat password" class="width-max" pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,}">
             <button type="button" aria-label="see confirmed passsword"
               class="flex-row justify-center align-center see-password"><svg xmlns="http://www.w3.org/2000/svg"
@@ -140,7 +140,7 @@
         </div>
       </fieldset>
       </fieldset>
-      <button id="submit" type="submit">Next</button>
+      <button id="btn-submit" type="button">Next</button>
     </form>
   </main>
 

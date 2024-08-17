@@ -110,7 +110,7 @@ input:user-invalid {
   border: solid 3px red;
 }
 
-#submit {
+#btn-submit {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   font-weight: bold;
@@ -258,7 +258,7 @@ footer svg:hover {
   transform: scale(1.1);
 }
 
-#submit {
+#btn-submit {
   background-color: whitesmoke;
 }
 
@@ -285,7 +285,7 @@ footer svg:hover {
     display: none;
   }
 
-  #submit {
+  #btn-submit {
     width: 100px;
     font-size: 18px;
     margin-top: 50px;

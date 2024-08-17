@@ -1,46 +1,58 @@
 let toggleMenu = false;
-document.getElementById('dropdown-btn').addEventListener('click', function (){
-  toggleMenu = !toggleMenu
-  document.getElementById('dropdown-content').style.height = toggleMenu ? "180px" : "0px";
-  document.getElementById('dropdown-content').style.opacity = toggleMenu ? "1" : "0";
-})
+document.getElementById("dropdown-btn").addEventListener("click", function () {
+  toggleMenu = !toggleMenu;
+  document.getElementById("dropdown-content").style.height = toggleMenu
+    ? "180px"
+    : "0px";
+  document.getElementById("dropdown-content").style.opacity = toggleMenu
+    ? "1"
+    : "0";
+});
 
-const submit = document.getElementById("submit");
+const btnSubmit = document.getElementById("btn-submit");
 const ownerInfo = document.getElementById("owner-form");
 const petInfo = document.getElementById("pet-form");
 const passwordInfo = document.getElementById("password-form");
-const ownerInputs = document.querySelectorAll('#owner-form input');
+const ownerInputs = document.querySelectorAll("#owner-form input");
 
 const ownerInputsValid = () => {
-  return Array.from(ownerInputs).every(input => input.checkValidity());
-}
+  return Array.from(ownerInputs).every((input) => input.checkValidity());
+};
 
-const passwordInputs = document.querySelectorAll('#password-form input');
+const passwordInputs = document.querySelectorAll("#password-form input");
+const passwordMatch = () => passwordInputs[0].value === passwordInputs[1].value;
 
 const passwordInputsValid = () => {
-  return Array.from(passwordInputs).every(input => input.checkValidity());
-}
+  return Array.from(passwordInputs).every((input) => input.checkValidity());
+};
 
-submit.addEventListener("click", function () {
-  if (!ownerInfo.classList.contains("invisible") &&ownerInputsValid()) {
-    ownerInfo.classList.add("invisible");
-    petInfo.classList.remove("invisible");
-  } else if (!petInfo.classList.contains("invisible")) {
+btnSubmit.addEventListener("click", function () {
+  if (passwordInfo.classList.contains("invisible") && !ownerInfo.classList.contains("invisible")) {
+      ownerInfo.classList.add("invisible");
+      petInfo.classList.remove("invisible");
+  } else if (
+    ownerInfo.classList.contains("invisible") &&
+    !petInfo.classList.contains("invisible")
+  ) {
     petInfo.classList.add("invisible");
     passwordInfo.classList.remove("invisible");
-  }
-
-  if (!passwordInfo.classList.contains("invisible")) {
-    submit.textContent = "Submit";
-  } else {
-    submit.textContent = "Next";
-  }
-
-  if (submit.textContent === 'Submit' && passwordInputsValid()){
-    alert('Account Created!')
+  } else if (!passwordInfo.classList.contains("invisible")) {
+    passwordInputs.forEach((input) => {
+      input.addEventListener("input", () => {
+        const existingMsg = passwordInfo.querySelector("p");
+        if (existingMsg) existingMsg.remove();
+      });
+    });
+    if (passwordMatch() === false) {
+      const msg = document.createElement("p");
+      msg.textContent = "Passwords do not match.";
+      msg.style.color = "red";
+      passwordInfo.appendChild(msg);
+    } else if (passwordMatch() === true && passwordInputsValid() === true) {
+      document.getElementById('registration').submit();
+    }
   }
 });
-
 
 const seePassword = document.querySelectorAll(".see-password");
 const passwordInput = document.querySelectorAll(".input-btn input");

@@ -1,3 +1,10 @@
+let toggleMenu = false;
+document.getElementById('dropdown-btn').addEventListener('click', function (){
+  toggleMenu = !toggleMenu
+  document.getElementById('dropdown-content').style.height = toggleMenu ? "180px" : "0px";
+  document.getElementById('dropdown-content').style.opacity = toggleMenu ? "1" : "0";
+})
+
 const submit = document.getElementById("submit");
 const ownerInfo = document.getElementById("owner-form");
 const petInfo = document.getElementById("pet-form");

@@ -35,26 +35,24 @@
             <path fill="rgb(3, 57, 3)"
               d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
           </svg></button>
+        <nav id="dropdown-content" class="flex-column justify-center align-end">
+          <a href="#">Contact</a>
+          <a href="#">My Pets</a>
+          <a href="#">Pet Care</a>
+          <a href="#">Our Team</a>
+          <a href="#">Appointment</a>
+        </nav>
       </div>
     </div>
 
-    <div class="flex-row justify-end align-center width-max">
-      <nav id="dropdown-content" class="flex-column justify-center align-end invisible">
-        <a href="#">Our Team</a>
-        <a href="#">Pet Care</a>
-        <a href="#">Contact</a>
-        <a href="#">Appointment</a>
-        <a href="#">My Pets</a>
-      </nav>
-    </div>
 
     <!--Header Links (desktop)-->
     <nav id="header-links" class="flex-row justify-even align-center width-max">
-      <a href="#">Our Team</a>
-      <a href="#">Pet Care</a>
       <a href="#">Contact</a>
-      <a href="#">Appointment</a>
       <a href="#">My Pets</a>
+      <a href="#">Pet Care</a>
+      <a href="#">Our Team</a>
+      <a href="#">Appointment</a>
     </nav>
 
   </header>
@@ -66,28 +64,34 @@
     <form class="flex-column justify-center align-center">
 
       <!--Owner-->
-      <fieldset id="owner-form" class="flex-column justify-center align-start">
+      <fieldset id="owner-form" class="flex-column justify-center align-center">
         <legend>Owner</legend>
         <div class="flex-row justify-around align-center">
-          <input type="text" placeholder="First Name" aria-label="first name" class="width-half straight-right">
-          <input type="text" placeholder="Last Name" aria-label="last name" class="width-half straight-left">
+          <input autocomplete="given-name" type="text" placeholder="First Name" aria-label="first name"
+            class="width-half straight-right">
+          <input autocomplete="family-name" type="text" placeholder="Last Name" aria-label="last name"
+            class="width-half straight-left">
         </div>
         <div class="flex-row justify-around align-center">
-          <input type="text" placeholder="Street Name" aria-label="street name" class="grow straight-right">
-          <input type="number" placeholder="No." aria-label="house number" class="width-quarter straight-left">
+          <input autocomplete="address-line1" type="text" placeholder="Street Name" aria-label="street name"
+            class="grow straight-right">
+          <input autocomplete="address-line2" type="number" placeholder="No." aria-label="house number"
+            class="width-quarter straight-left">
         </div>
         <div class="flex-row justify-around align-center">
-          <input type="text" placeholder="Post Code" aria-label="post code" class="width-half straight-right">
-          <input type="text" placeholder="Location" aria-label="location" class="width-half straight-left">
+          <input autocomplete="postal-code" type="text" placeholder="Postal Code" aria-label="postal code"
+            class="width-half straight-right">
+          <input autocomplete="address-level2" type="text" placeholder="City" aria-label="city"
+            class="width-half straight-left">
         </div>
         <div class="flex-column justify-center align-stretch">
-          <input type="tel" placeholder="Phone Number" aria-label="phone number">
-          <input type="email" placeholder="Email" aria-label="email">
+          <input autocomplete="tel" type="tel" placeholder="Phone Number" aria-label="phone number">
+          <input autocomplete="email" type="email" placeholder="Email" aria-label="email">
         </div>
       </fieldset>
 
       <!--Pet-->
-      <fieldset id="pet-form" class="flex-column justify-center align-start invisible">
+      <fieldset id="pet-form" class="flex-column justify-center align-center invisible">
         <legend>Pet</legend>
         <div class="group flex-column justify-center align-stretch">
           <div class="flex-column justify-center align-stretch">
@@ -109,10 +113,67 @@
       </fieldset>
 
       <!--Account-->
-      <fieldset id="password-form" class="flex-column justify-center align-start invisible">
+      <fieldset id="password-form" class="flex-column justify-center align-center invisible">
         <legend>Password</legend>
-        <input type="password" placeholder="Create Password" aria-label="create password" class="width-max">
-        <input type="password" placeholder="Repeat Password" aria-label="repeat password" class="width-max">
+        <div class="flex-column justify-center align-center">
+          <div class="flex-row justify-center align-center input-btn">
+            <input id="password" autocomplete="new-password" type="password" placeholder="Create Password"
+              aria-label="create password" class="width-max">
+            <button type="button" aria-label="see passsword"
+              class="flex-row justify-center align-center see-password"><svg xmlns="http://www.w3.org/2000/svg"
+                width="16" height="16" aria-hidden="true" viewBox="0 0 576 512">
+                <path
+                  d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z" />
+              </svg></button>
+          </div>
+          <div id="password-requirements" class="flex-row justify-center align-center invisible">
+            <div class="description flex-column justify-center align-center grow">
+              <p>8 characters</p>
+              <p>Uppercase</p>
+              <p>Lowercase</p>
+              <p>Symbol</p>
+              <p>Number</p>
+            </div>
+            <div class="icons flex-column justify-center align-center">
+              <span><svg aria-label="Requirement not met: 8 characters" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512" width="10" height="10">
+                  <path fill="red"
+                    d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+                </svg></span>
+              <span><svg aria-label="Requirement not met: uppercase letter" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512" width="10" height="10">
+                  <path fill="red"
+                    d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+                </svg></span>
+              <span><svg aria-label="Requirement not met: lowercase letter" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512" width="10" height="10">
+                  <path fill="red"
+                    d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+                </svg></span>
+              <span><svg aria-label="Requirement not met: symbol" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512" width="10" height="10">
+                  <path fill="red"
+                    d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+                </svg></span>
+              <span><svg aria-label="Requirement not met: number" xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 512 512" width="10" height="10">
+                  <path fill="red"
+                    d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM175 175c-9.4 9.4-9.4 24.6 0 33.9l47 47-47 47c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l47-47 47 47c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-47-47 47-47c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-47 47-47-47c-9.4-9.4-24.6-9.4-33.9 0z" />
+                </svg></span>
+            </div>
+          </div>
+          <div class="flex-row justify-center align-center input-btn">
+            <input autocomplete="new-password" type="password" placeholder="Repeat Password"
+              aria-label="repeat password" class="width-max">
+            <button type="button" aria-label="see confirmed passsword"
+              class="flex-row justify-center align-center see-password"><svg xmlns="http://www.w3.org/2000/svg"
+                width="16" height="16" aria-hidden="true" viewBox="0 0 576 512">
+                <path
+                  d="M288 80c-65.2 0-118.8 29.6-159.9 67.7C89.6 183.5 63 226 49.4 256c13.6 30 40.2 72.5 78.6 108.3C169.2 402.4 222.8 432 288 432s118.8-29.6 159.9-67.7C486.4 328.5 513 286 526.6 256c-13.6-30-40.2-72.5-78.6-108.3C406.8 109.6 353.2 80 288 80zM95.4 112.6C142.5 68.8 207.2 32 288 32s145.5 36.8 192.6 80.6c46.8 43.5 78.1 95.4 93 131.1c3.3 7.9 3.3 16.7 0 24.6c-14.9 35.7-46.2 87.7-93 131.1C433.5 443.2 368.8 480 288 480s-145.5-36.8-192.6-80.6C48.6 356 17.3 304 2.5 268.3c-3.3-7.9-3.3-16.7 0-24.6C17.3 208 48.6 156 95.4 112.6zM288 336c44.2 0 80-35.8 80-80s-35.8-80-80-80c-.7 0-1.3 0-2 0c1.3 5.1 2 10.5 2 16c0 35.3-28.7 64-64 64c-5.5 0-10.9-.7-16-2c0 .7 0 1.3 0 2c0 44.2 35.8 80 80 80zm0-208a128 128 0 1 1 0 256 128 128 0 1 1 0-256z" />
+              </svg></button>
+          </div>
+        </div>
+      </fieldset>
       </fieldset>
       <button id="submit" type="button">Next</button>
     </form>

@@ -7,19 +7,22 @@
 Simple yet engaging registration form for an imaginary veterinary clinic.
 
 <br>
-<br>
 
-## Index
-- [Goal](#goal)
-- [Guidelines](#guidelines)
-- [Project Structure](#project-structure)
-- [Main Features](#main-features)
-- [Areas for Improvement](#areas-for-improvement)
-- [Lighthouse Report](#lighthouse-report)
-- [Installation Guide](#installation-guide)
-- [Usage Instructions](#usage-instructions)
-- [Attributions](#attributions)
-- [License](#license)
+
+| Section               | Link                                     |
+|-----------------------|------------------------------------------|
+|🎯**Goal**             | [Goal](#goal)                            |
+|📏**Guidelines**       | [Guidelines](#guidelines)                |
+|🗂️**Structure**       | [Project Structure](#project-structure)  |
+|✨**Main Features**     | [Main Features](#main-features)          |
+|⚠️**Improvement Oppurtunity** | [Areas for Improvement](#areas-for-improvement) |
+|📊**Lighthouse Report** | [Lighthouse Report](#lighthouse-report) |
+|🛠️**Installation Guide** | [Installation Guide](#installation-guide) |
+|📝**Usage Instructions** | [Usage Instructions](#usage-instructions) |
+|📜**Attributions**     | [Attributions](#attributions)            |
+|📄**License**          | [License](#license)                      |
+
+
 
 <br>
 <br>
@@ -78,7 +81,7 @@ Completion is more important than perfection. The project will never be flawless
 ![Untitled design (5)](https://github.com/user-attachments/assets/9900f0ce-256f-43db-8c38-11e63fde5d58)
 
 
-- **Password Visibility Toggle:** It is possible to toggle the visibility of the password through an icon displayed the right side of the respective inputs. To make it a bit more engaging, the icon also changes depending on the visibility of the password.
+- **Password Visibility Toggle:** It is possible to toggle the visibility of the password through an icon displayed at the right side of the respective inputs. To make it a bit more engaging, the icon also changes depending on the visibility of the password.
 ![Untitled design (6)](https://github.com/user-attachments/assets/d3e19583-2e23-41e7-a1f9-e04363ea404d)
 
 

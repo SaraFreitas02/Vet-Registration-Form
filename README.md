@@ -1,6 +1,7 @@
 # Vet Registration Form
 This project consists of a simple yet engaging registration form for an imaginary veterinary clinic.
 
+## Index
 - [Goal](#goal)
 - [Guidelines](#guidelines)
 - [Project Structure](#project-structure)

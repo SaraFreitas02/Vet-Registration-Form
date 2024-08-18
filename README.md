@@ -39,14 +39,21 @@ Completion is more important than perfection. The project will never be flawless
 
 ## Main Features
 - **Responsive Layout:** The web app adapts to the screen size of the user's device—either through subtle changes like the scaling of elements or through a slightly different layout. The main difference is in the display of the header menu, which is presented as a navigation bar on desktop and tablet devices and as a dropdown menu—triggered by a button on the right side of the header—on mobile devices.
+![Untitled design (3)](https://github.com/user-attachments/assets/7fce166b-8d93-48d3-9305-4a93dcfd55a6)
 
 - **Piece-by-Piece Form:** The form is divided into three different parts: owner information, pet information, and account creation. The 'Next' button triggers the change between each section, making the form less overwhelming for the user.
+![Untitled design (4)](https://github.com/user-attachments/assets/f14ed04d-7abc-43ad-ba21-a906a2fed0f2)
+
 
 - **Form Feedback:** To make the completion of this form a bit more engaging and dynamic, some interactive feedback features were implemented:
     - Inputs’ borders turn green when they are valid and red when invalid.
     - A warning message is displayed when the two password inputs’ values do not match, and the form is not submitted.
+![Untitled design (5)](https://github.com/user-attachments/assets/9900f0ce-256f-43db-8c38-11e63fde5d58)
+
 
 - **Password Visibility Toggle:** It is possible to toggle the visibility of the password through an icon displayed the right side of the respective inputs. To make it a bit more engaging, the icon also changes depending on the visibility of the password.
+![Untitled design (6)](https://github.com/user-attachments/assets/d3e19583-2e23-41e7-a1f9-e04363ea404d)
+
 
 ## Areas for Improvement
 - **Input Feedback:** The change of the inputs' border color depending on their validity needs some refinements since it doesn’t always work.
@@ -66,6 +73,7 @@ These are the Lighthouse ratings checked to assess the quality and optimization 
 | **Best Practices**| 100   |
 
 These scores reflect the project’s commitment to high standards in performance, accessibility, SEO, and overall best practices.
+![MOBILE](https://github.com/user-attachments/assets/b17a3741-dfd2-4ccb-a068-1a91e6d3a725)
 
 ## Installation Guide
 You can access the web app through its [live deployment](https://sarafreitas02.github.io/Vet-Registration-Form/) or locally by downloading the repository:

@@ -105,6 +105,7 @@ These scores reflect the project’s commitment to high standards in performance
 <br>
 
 ## Browser Compatibility
+*Last update: 22-08-2024 20h00*
 
 A browser is considered compatible when users can perform the key functions as expected while still experiencing most of the app’s features. However, this does not enssure a completely glitch-free experience, as some issues may be browser-specific. For more details on potential errors and glitches, see [areas for improvement](#areas-for-improvement).
 
@@ -115,6 +116,10 @@ A browser is considered compatible when users can perform the key functions as e
 | Firefox        | ✅         |
 | Opera          | ✅         |
 | Safari         | ✅         |
+
+<br>
+
+If a browser is not displayed in the table above, it means it has not yet been tested.
 
 <br>
 <br>

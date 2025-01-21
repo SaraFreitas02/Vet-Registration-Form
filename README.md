@@ -20,7 +20,7 @@ Simple yet engaging registration form for an imaginary veterinary clinic.
 | ✨**Main Features**           | [Main Features](#main-features)                 |
 | 📊**Lighthouse Report**       | [Lighthouse Report](#lighthouse-report)         |
 | 📊**Tested Browsers**         | [Browser Compatibility](#browser-compatibility) |
-| ⚠️**Improvement Oppurtunity** | [Areas for Improvement](#areas-for-improvement) |
+| ⚠️**Improvement Opportunity** | [Areas for Improvement](#areas-for-improvement) |
 | 🛠️**Installation Guide**      | [Installation Guide](#installation-guide)       |
 | 📝**Usage Instructions**      | [Usage Instructions](#usage-instructions)       |
 | 📜**Attributions**            | [Attributions](#attributions)                   |
